@@ -13,6 +13,7 @@ btnCreate.addEventListener("click", () => {
 
     if (passw != confPassw) {
         document.querySelector("#error").innerHTML = "*The passwords don't match.";
+
     } else {
         //passwords são iguais entra aqui
 
