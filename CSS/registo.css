@@ -1,0 +1,26 @@
+#logo {
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+#marcaTipo {
+    transform: scale(1);
+}
+
+#fname,
+#lname,
+#age,
+#email,
+#passw,
+#confpassw {
+    border-radius: 25px;
+    margin: 5px
+}
+
+#btnCreate {
+    border-radius: 15px;
+}
+
+#logo {
+    margin-left: px;
+}

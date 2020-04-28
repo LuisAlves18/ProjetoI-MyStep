@@ -2,24 +2,20 @@
 <html lang="en">
 
 <head>
-    <title>Login</title>
+    <title>Register</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <base href="/">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS\styles.css">
-    <link rel="stylesheet" href="CSS\index.css">
-</head>
-
-
-
+    <link rel="stylesheet" href="CSS\registo.css">
 </head>
 
 <body>
-    <div class="content-fluid">
-
+    <div class="container-fluid">
 
         <div class="row justify-content-center">
             <a href="HTML/index.html"><img src="OUTROS\Logo.png" id="logo" alt="" height="250"></a>
@@ -29,29 +25,58 @@
             <img src="OUTROS\marcat-02.png" id="marcaTipo" alt="">
 
         </div>
-        <form id="login">
-            <div class="form-row  justify-content-center">
+        <div class="row justify-content-center">
+            <h6>Join our Community</h6>
+        </div>
+
+        <form id="frmRegisto">
+
+
+            <div class="form-row  align-items-start">
                 <div class="col-6">
-                    <input type="email" class="form-control form-control" id="userN" placeholder="Email" required>
+                    <input type="text" class="form-control form-control" id="fname" placeholder="First Name" required>
+                </div>
+                <div class="col-6">
+                    <input type="text" class="form-control form-control" id="lname" placeholder="Last Name" required>
                 </div>
 
             </div>
-            <div class="form-row  justify-content-center">
+
+
+            <div class="form-row  align-items-start">
                 <div class="col-6">
-                    <input type="password" class="form-control form-control" id="passW" placeholder="Password" required>
+                    <input type="email" class="form-control form-control" id="email" placeholder="Email" required>
+                </div>
+                <div class="col-6">
+                    <input type="date" class="form-control form-control" id="age" placeholder="Age" required>
                 </div>
             </div>
+
+
+            <div class="form-row justify-content-center">
+                <div class="col-6">
+                    <input type="password" class="form-control form-control" id="passw" placeholder="Password" required>
+                </div>
+                <div class="col-6">
+                    <input type="password" class="form-control form-control" id="confpassw" placeholder="Confirm Password" required>
+                </div>
+            </div>
+
+
             <div class="row justify-content-center">
                 <button class="btn btn-secondary" id="btnCreate" type="submit">
-                    Login
+                    JOIN
                 </button>
             </div>
 
         </form>
+
+
+
+
     </div>
-
     <!-- Optional JavaScript -->
-
+    <script src="JAVASCRIPT\registo.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

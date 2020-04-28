@@ -1,0 +1,14 @@
+body {
+    margin: 20px;
+}
+
+#userN,
+#passW {
+    border-radius: 15px;
+    margin: 10px;
+}
+
+#btnCreate {
+    border-radius: 15px;
+    margin: 10px;
+}
