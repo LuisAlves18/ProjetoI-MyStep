@@ -10,50 +10,43 @@ btnCreate.addEventListener("click", () => {
     const fname = document.querySelector("#fname").value;
     const lname = document.querySelector("#lname").value;
     const age = document.querySelector("#age").value;
-
+    let users = [];
     if (passw != confPassw) {
         document.querySelector("#error").innerHTML = "*The passwords don't match.";
-
+        return
     } else {
         //passwords são iguais entra aqui
 
-        //verificar se ja exite o email do user na localStorage
-        if (localStorage.getItem(email) === null) {
-            //caso nao exista , cria um novo utilizador no localStorage
+        if (localStorage.getItem("users")) {
 
-            let users = {
-                Fname: fname,
-                Lname: lname,
-                Birth: age,
-                Password: passw
-            };
+            users = JSON.parse(localStorage.getItem("users"));
 
-            localStorage.setItem(email,
-                    JSON.stringify(users)
-                )
-                //aqui quero pesquisar no local Storage pelo email
-            for (let i = 0; i < localStorage.length; i++) {
-                const key = localStorage.key(i)
-                    //quando o email no input é o mesmo que a key da localStorage
-                if (email === key) {
-                    //guarda o nome numa variavel
-                    utilizador = users.Fname;
+        }
+        for (const user of users) {
+            if (user.Email === email) {
+                document.querySelector("#error").innerHTML = "*The passwords don't match.";
 
-                    //agora quero passar esta variavel para um p do index.html
-                    window.location.href = "index.html" + utilizador;
-
-                    console.log(`${key} -> ${users.Fname}`);
-                }
-
+                return;
             }
 
-        } else {
-            //se existir dá erro de existencia
-            alert("Email already exists");
         }
-
-        //redireciona para a pagina inicial da app
-        //window.location.href = "index.html"
+        users.push({
+            Fname: fname,
+            Lname: lname,
+            Email: email,
+            Birth: age,
+            Password: passw
+        });
+        localStorage.setItem("users",
+            JSON.stringify(users)
+        )
+        event.preventDefault();
     }
+
+
+
+
+
+
 
 })

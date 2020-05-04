@@ -12,3 +12,7 @@ body {
     border-radius: 15px;
     margin: 10px;
 }
+
+#logo {
+    margin-left: 60px;
+}

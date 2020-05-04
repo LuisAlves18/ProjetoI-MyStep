@@ -10,3 +10,7 @@ nav {
     margin-left: 13vw;
     border-radius: 25px;
 }
+
+#error {
+    color: #F1E912;
+}
