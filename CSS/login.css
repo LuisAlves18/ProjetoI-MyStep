@@ -37,12 +37,8 @@ body {
     left: 40%;
 }
 
-#name,
-#username,
-#age,
-#email,
-#passw,
-#confpassw {
+#LogUsername,
+#Logpassw {
     border-radius: 25px;
     margin: 10px 5px 5px 5px;
 }
