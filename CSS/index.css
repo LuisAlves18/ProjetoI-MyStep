@@ -1,18 +1,24 @@
-body {
-    margin: 20px;
+.carousel-control-prev-icon {
+    background-image: url(../OUTROS/previous-02.png);
+    margin-left: -25vh;
+    zoom: 200%;
 }
 
-#userN,
-#passW {
-    border-radius: 15px;
-    margin: 10px;
+.carousel-control-next-icon {
+    background-image: url(../OUTROS/next-01.png);
+    margin-right: -25vh;
+    zoom: 200%;
 }
 
-#btnCreate {
-    border-radius: 15px;
-    margin: 10px;
+h5 {
+    margin: 3vh;
 }
 
-#logo {
-    margin-left: 60px;
+#about {
+    border-radius: 28px;
+    background-color: #00cc99;
+}
+
+#carPlusInfo {
+    zoom: 120%
 }

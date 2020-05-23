@@ -1,12 +1,40 @@
-nav {
-    background-color: black;
+body {
+    background-color: #DADADA;
 }
 
-#navBtn {
-    margin-left: 13vw;
-    border-radius: 25px;
+.nav-link {
+    color: #00cc99;
 }
 
-#error {
-    color: #F1E912;
+.nav-link:hover {
+    color: white;
+}
+
+#navnav {
+    margin: 2px;
+}
+
+.dropdown-menu {
+    background-color: #484848;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+#navbar {
+    background-color: #484848;
+    height: 45px;
+}
+
+#current {
+    color: white;
+}
+
+#dropdown {
+    margin-left: 8vh;
+}
+
+#logout {
+    color: red;
 }

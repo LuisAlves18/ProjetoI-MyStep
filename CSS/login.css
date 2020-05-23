@@ -1,7 +1,10 @@
 body {
     height: 100%;
     overflow: hidden;
-    padding: 0;
+}
+
+.container-fluid {
+    padding: 0px;
 }
 
 #Background {
@@ -44,7 +47,8 @@ body {
 }
 
 #btnCreate {
-    border-radius: 15px;
+    border-radius: 28px;
+    background-color: #00cc99;
 }
 
 #logo {
