@@ -1,24 +1,66 @@
-.carousel-control-prev-icon {
-    background-image: url(../OUTROS/previous-02.png);
-    margin-left: -25vh;
-    zoom: 200%;
-}
-
-.carousel-control-next-icon {
-    background-image: url(../OUTROS/next-01.png);
-    margin-right: -25vh;
-    zoom: 200%;
-}
-
-h5 {
-    margin: 3vh;
-}
-
-#about {
-    border-radius: 28px;
-    background-color: #00cc99;
-}
-
-#carPlusInfo {
-    zoom: 120%
-}
+  .carousel-control-prev-icon {
+      background-image: url(../OUTROS/previous-02.png);
+      margin-left: -25vh;
+      zoom: 200%;
+  }
+  
+  .carousel-control-next-icon {
+      background-image: url(../OUTROS/next-01.png);
+      margin-right: -25vh;
+      zoom: 200%;
+  }
+  
+  h5 {
+      margin: 3vh;
+  }
+  
+  #about {
+      border-radius: 28px;
+      background-color: #00cc99;
+      color: black;
+  }
+  
+  #about:hover {
+      color: white;
+  }
+  
+  #carPlusInfo {
+      zoom: 120%
+  }
+  
+  #menu {
+      margin-top: 20vh;
+      margin-bottom: 20vh;
+  }
+  
+  #training,
+  #events,
+  #team {
+      border-left: 1PX SOLID;
+  }
+  
+  #training img,
+  #events img,
+  #team img {
+      margin: 1vh
+  }
+  
+  #training h4,
+  #events h4,
+  #team h4 {
+      color: #00cc99;
+  }
+  
+  #btnStart,
+  #btnSearch,
+  #btnFind {
+      border-radius: 28px;
+      background-color: #00cc99;
+      color: black;
+  }
+  
+  #btnStart:hover,
+  #btnSearch:hover,
+  #btnFind:hover {
+      color: white;
+  }
