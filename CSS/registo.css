@@ -55,3 +55,7 @@ body {
 #logo {
     margin-left: px;
 }
+
+#errorMessage {
+    color: yellow;
+}
