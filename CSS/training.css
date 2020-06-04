@@ -1,0 +1,70 @@
+#startPoint {
+    border-radius: 25px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    margin: 55px 0px 5px 5px;
+    width: 80px;
+    background-color: #00cc99;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+#endPoint {
+    border-radius: 25px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    margin: 55px 0px 5px 5px;
+    width: 80px;
+    background-color: black;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+}
+
+#startLocation,#endLocation {
+    border-radius: 25px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    margin: 55px 5px 5px 0px;
+    width: 150px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+#mapDiv {
+    margin-top: 75px;
+    background-color: black;
+    width: 700px;
+    height: 500px;
+}
+
+#btnStart,#btnStop, #btnSave {
+    border-radius: 28px;
+    
+    width: 100px;
+    
+}
+
+#btnStart {
+    margin-right: 45px;
+    color: black;
+    background-color: #00cc99;
+}
+
+#btnStop {
+    color: white;
+    background-color: black;
+}
+
+#btnSave {
+    color: black;
+    background-color: white;
+    margin-top: 15px;
+}
+
+#timer {
+    font-size: 30px;
+}

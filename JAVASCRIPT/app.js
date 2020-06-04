@@ -1,17 +1,47 @@
 import UserView from '../JAVASCRIPT/view/UserView.js'
+import UserViewLogin from '../JAVASCRIPT/view/UserViewLogin.js'
+import UserViewRegisto from '../JAVASCRIPT/view/UserViewRegisto.js'
+import UserViewLogout from '../JAVASCRIPT/view/UserViewLogout.js'
+import UserInfoView from '../JAVASCRIPT/view/UserInfoView.js'
+import TrainingView from './view/TrainingView.js'
+import EventsView from './view/EventsView.js'
+import EventsInfoView from './view/Events-infoView.js'
+import TeamsView from './view/TeamsView.js'
+
 
 
 class App{
     constructor()  {
         this.routes = {
             '': [
-                UserView
+                UserView,
+                UserViewLogin,
+                UserViewRegisto,
+                UserViewLogout
             ],
             'registo': [
-                UserView
+                UserViewRegisto
             ],
             'login': [
-                UserView
+                UserViewLogin
+            ],
+            'index': [
+                UserViewLogout
+            ],
+            'edit-profile': [
+                UserInfoView
+            ],
+            'training': [
+                TrainingView
+            ],
+            'events': [
+                EventsView
+            ],
+            'events-info': [
+                EventsInfoView
+            ],
+            'teams': [
+                TeamsView
             ]
 
         };
@@ -24,9 +54,9 @@ class App{
     }
 
     _instantiateViews() {
-        const path = window.location.pathname
-        const file = path.substr(path.lastIndexOf('/') + 1);
-        const route = file.split('.')[0];
+        const path = window.location.pathname //http://127.0.0.1:5501/HTML/registo.html
+        const file = path.substr(path.lastIndexOf('/') + 1); //registo.html
+        const route = file.split('.')[0]; // registo
 
         const views = this._getViews(route);
 
@@ -60,3 +90,4 @@ class App{
 }
 
 new App();
+

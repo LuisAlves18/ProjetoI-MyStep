@@ -8,7 +8,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <base href="/">
-
+    <link rel="stylesheet"
+          href= 
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/styles.css">
@@ -16,9 +18,34 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-md  " id=navbar>
+        <!-- Logo -->
+        <a class="navbar-brand" href="HTML/index.html"><img src="OUTROS\LogoW.png" height="40px" alt="" id="logo"></a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cNavbar">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="cNavbar">
+            <ul class="navbar-nav ml-auto" id="navnav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/HTML/login.html" >
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/HTML/registo.html" id="current">
+                        Register
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <img src="OUTROS/BckgLogReg.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+
+    <img src="OUTROS/BckgLogReg.png" class="img-responsive img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
     <div class="row justify-content-center">
+        
 
         <div id="RegBox" class="col-4">
             <div class="row justify-content-center" id="HeadReg">
@@ -49,10 +76,13 @@
 
 
                 <div class="form-row justify-content-center">
-                    <div class="col-6">
-                        <input type="password" class="form-control form-control" id="RegPassw" placeholder="Password" required>
+                    <div class="col-6 input-icons">
+                        <i class="fa fa-key icon" onclick="showpassw()"></i>
+                        <input type="password" class="form-control form-control" id="RegPassw" placeholder="Password" required >
+                        
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 input-icons" >
+                        <i class="fa fa-key icon" onclick="showpassw2()"></i>
                         <input type="password" class="form-control form-control" id="confpassw" placeholder="Confirm Password" required>
                     </div>
                 </div>
@@ -84,6 +114,7 @@
     </div>
     <!-- Optional JavaScript -->
     <script type="module" src="../JAVASCRIPT/app.js"></script>
+    <script src="../JAVASCRIPT/otherFunction.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -1,13 +1,13 @@
   .carousel-control-prev-icon {
       background-image: url(../OUTROS/previous-02.png);
-      margin-left: -25vh;
-      zoom: 200%;
+      zoom: 220%;
+      margin-left: -10vw;
   }
   
   .carousel-control-next-icon {
       background-image: url(../OUTROS/next-01.png);
-      margin-right: -25vh;
-      zoom: 200%;
+      zoom: 220%;
+      margin-right: -10vw;
   }
   
   h5 {
@@ -33,10 +33,9 @@
       margin-bottom: 20vh;
   }
   
-  #training,
-  #events,
-  #team {
-      border-left: 1PX SOLID;
+  #events {
+      border-left: 1PX solid;
+      border-right: 1PX solid;
   }
   
   #training img,
@@ -48,7 +47,7 @@
   #training h4,
   #events h4,
   #team h4 {
-      color: #00cc99;
+      color: black;
   }
   
   #btnStart,

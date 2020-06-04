@@ -15,7 +15,7 @@
 
 <body>
     <div class="content-fluid">
-        <nav class="navbar navbar-expand-md  " id=navbar>
+        <nav class="navbar navbar-expand-md" id=navbar>
             <!-- Logo -->
             <a class="navbar-brand" href="HTML/index.html"><img src="OUTROS\LogoW.png" height="40px" alt=""></a>
             <!-- Toggler/collapsibe Button -->
@@ -33,14 +33,19 @@
 
 
                     <li class="nav-item ">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="HTML/training.html">
                             Training
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="HTML/events.html">
                             Events
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="HTML/teams.html">
+                            Teams
                         </a>
                     </li>
                     <li class="nav-item">
@@ -50,16 +55,16 @@
                     </li>
                     <li class="nav-item dropdown " id="dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            username <img src="OUTROS/download.png" height="30px" >
+                            <span id="name">username </span><img src="OUTROS/download.png" height="30px">
                         </a>
+
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Achievements</a>
                             <a class="dropdown-item" href="#">Statistics</a>
                             <a class="dropdown-item" href="#">Edit Profile</a>
                             <a class="dropdown-item" href="#">Running Data</a>
                             <a class="dropdown-item" href="#">Equipment Data</a>
-                            <a class="dropdown-item" href="#">Teams</a>
-                            <a class="dropdown-item" href="#" id="logout">Log out</a>
+                            <button class="dropdown-item" id="logout" type="button">Log out</button>
                         </div>
                     </li>
                 </ul>
@@ -71,13 +76,19 @@
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" id="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active justify-content-center">
-                            <img src="OUTROS/carousel1.png" class="img-fluid " alt="">
+                            <img class="img-responsive" style="width:100vh; zoom: 120%;" src="OUTROS\mt-0890-info02-img00.jpg" alt="">
                         </div>
                         <div class="carousel-item">
-                            <img src="OUTROS/Logo.png" class="img-fluid  " alt="">
+                            <img src="OUTROS\1036780592-1280x720.jpg" style="width:100vh; zoom: 120%;" class="img-responsive  " alt="">
                         </div>
                         <div class="carousel-item">
-                            <img src="OUTROS/LogoW.png" class="img-fluid " alt="">
+                            <img src="OUTROS\greatest-running-tips-of-all-time_h.jpg" style="width:100vh; zoom: 120%;" style="width:100vh" class="img-responsive " alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="OUTROS\porto-1972486_1920.jpg" style="width:100vh; zoom: 120%;" style="width:100vh" class="img-responsive " alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="OUTROS\greatest-running-tips-of-all-time_h.jpg" style="width:100vh; zoom: 120%;" style="width:100vh" class="img-responsive " alt="">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -99,24 +110,25 @@
         </div>
         <div id="menu">
             <div class=" row justify-content-center">
-                <div class="col-4 text-center" id="training">
+                <div class="col-sm-12 col-md-4 col-lg-4 text-center" id="training">
                     <h4>Start Training and improving now!</h4>
                     <img src="OUTROS\smartwatch-forerunner-935-negru_10029662_4_1496387391.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
                     <br>
-                    <a name="" id="btnStart" class="btn btn-outline-light" href="#" role="button">Start</a>
+
+                    <a name="" id="btnStart" class="btn btn-outline-light" href="HTML/training.html" role="button">Start</a>
                 </div>
-                <div class="col-4 text-center" id="events">
+                <div class="col-sm-12 col-md-4 col-lg-4 text-center" id="events">
                     <h4>Search Running Events near you</h4>
                     <img src="OUTROS\29340612_776409759196400_7562716004074127360_o.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
                     <br>
-                    <a name="" id="btnSearch" class="btn btn-outline-light" href="#" role="button">Search</a>
+                    <a name="" id="btnSearch" class="btn justify-content-center btn-outline-light " href="HTML/events.html" role="button">Search</a>
 
                 </div>
-                <div class="col-4 text-center" id="team">
-                    <h4>Search Running Events near you</h4>
-                    <img src="OUTROS\NNRunningTeam_2019.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+                <div class="col-sm-12 col-md-4 col-lg-4 text-center" id="team">
+                    <h4>Search for a Team</h4>
+                    <img src="OUTROS\NNRunningTeam_2019.png" class="img-fluid " alt="">
                     <br>
-                    <a name="" id="btnFind" class="btn btn-outline-light" href="#" role="button">Find</a>
+                    <a name="" id="btnFind" class="btn btn-outline-light" href="HTML/teams.html" role="button">Find</a>
 
                 </div>
 
@@ -127,6 +139,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="module" src="JAVASCRIPT/app.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

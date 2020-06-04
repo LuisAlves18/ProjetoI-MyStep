@@ -1,0 +1,43 @@
+#header {
+    border-radius: 28px;
+    background-color: #484848;
+}
+
+p#run-name {
+    color: #00cc99;
+    margin: 0px;
+}
+
+#edition {
+    color: white;
+}
+
+#info {
+    background-color: #707070;
+    border-radius: 28px;
+    margin: 0;
+    padding: 0px;
+}
+
+#date {
+    margin-top: 2vh;
+    color: #00cc99;
+}
+
+div#content-table {
+    margin-top: 7vh;
+}
+
+#type {
+    font-weight: bold;
+    margin: 2vh 0vh 3vh 3vh;
+    border-right: 1px solid;
+}
+
+#slogan {
+    margin: 2vh 0vh 3vh 3vh;
+}
+
+#bar {
+    border-bottom: 1PX solid;
+}

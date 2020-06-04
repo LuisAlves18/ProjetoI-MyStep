@@ -1,6 +1,6 @@
 import UserController from '../controller/UserController.js'
 
-export default class TeamsView {
+export default class UserInfoView {
     constructor() {
         this.userController = new UserController();
 

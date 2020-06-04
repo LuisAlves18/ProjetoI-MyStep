@@ -1,0 +1,18 @@
+#rowDrop {
+    margin: 1vh;
+}
+
+#dropdownMenuButton {
+    border-radius: 28px;
+    background-color: #00cc99;
+}
+
+.dropdown-menu {
+    background-color: white;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+}
+
+#IpName {
+    border-radius: 28px;
+}

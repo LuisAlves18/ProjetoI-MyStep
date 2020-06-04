@@ -24,8 +24,8 @@ body {
 }
 
 #logo {
-    margin-top: 20px;
-    margin-left: 60px;
+    
+    margin-left: 6vh;
 }
 
 #RegBox {
@@ -38,24 +38,47 @@ body {
 }
 
 #name,
-#username,
+#RegUsername,
 #age,
 #email,
-#passw,
+#RegPassw,
 #confpassw {
     border-radius: 25px;
     margin: 10px 5px 5px 5px;
 }
 
-#btnCreate {
+#btnRegister {
     border-radius: 28px;
     background-color: #00cc99;
 }
 
-#logo {
-    margin-left: px;
-}
 
 #errorMessage {
     color: yellow;
 }
+
+#navnav {
+    margin-right: 12vh;
+}
+
+.icon {
+    padding: 20px; 
+    color: #00cc99; 
+    min-width: 50px; 
+    text-align: center;
+    margin-left: 170px;
+    
+  }
+
+  .input-icons i { 
+    position: absolute; 
+} 
+
+.input-icons { 
+    width: 100%; 
+    margin-bottom: 5px; 
+} 
+
+
+
+
