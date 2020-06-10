@@ -1,12 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Events</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <base href="/">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/events.css">
 </head>
+
 <body>
-    
+    <div class="content-fluid">
+        <nav class="navbar navbar-expand-md" id=navbar>
+            <!-- Logo -->
+            <a class="navbar-brand" href="HTML/index.html"><img src="OUTROS\LogoW.png" height="40px" alt=""></a>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="cNavbar">
+                <ul class="navbar-nav ml-auto" id="navnav">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#" id="current">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="HTML/training.html">
+                            Training
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="HTML/events.html">
+                            Events
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="HTML/teams.html">
+                            Teams
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown " id="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="name">username </span><img src="OUTROS/download.png" height="30px">
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Achievements</a>
+                            <a class="dropdown-item" href="#">Statistics</a>
+                            <a class="dropdown-item" href="#">Edit Profile</a>
+                            <a class="dropdown-item" href="#">Running Data</a>
+                            <a class="dropdown-item" href="#">Equipment Data</a>
+                            <button class="dropdown-item" id="logout" type="button">Log out</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row justify-content-center">
+            <div class="dropdown ">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="btnFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Filter
+            </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="form-check">
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Search">
+
+                        </div>
+                        <span>Type</span><br>
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="run" id="run" value="checkedValue" >
+                        Run
+                      </label><br>
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="walk" id="walk" value="checkedValue" >
+                        Walk
+                      </label><br>
+                        <span>Distance</span><br>
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="5K" id="5k" value="checkedValue" >
+                        5K
+                      </label><br>
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="10K" id="10k" value="checkedValue" >
+                        10K
+                      </label><br>
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="21K" id="21k" value="checkedValue" >
+                        21K
+                      </label><br>
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="42K" id="42k" value="checkedValue" >
+                        42K
+                      </label>
+                        <button class="dropdown-item" id="btn_filter" type="button">Filter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p id="catalog">
+
+        </p>
+    </div>
+
     <script src="/JAVASCRIPT/app.js" type="module"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+
 </html>

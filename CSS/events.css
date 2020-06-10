@@ -1,18 +1,31 @@
-#rowDrop {
-    margin: 1vh;
+#btnFilter {
+    padding-left: 10vh;
+    padding-right: 10vh;
+    margin: 3vh;
+    border-radius: 28px;
+    background-color: #00cc99;
 }
 
-#dropdownMenuButton {
+#btn_filter {
     border-radius: 28px;
     background-color: #00cc99;
 }
 
 .dropdown-menu {
-    background-color: white;
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
+    color: white;
 }
 
-#IpName {
+.dropdown-item {
+    justify-content: center;
+}
+
+.see {
     border-radius: 28px;
+    background-color: #00cc99;
+}
+
+.see:hover {
+    border-radius: 28px;
+    background-color: white;
+    color: #00cc99;
 }

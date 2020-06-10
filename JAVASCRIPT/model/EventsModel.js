@@ -6,20 +6,21 @@ export default class eventModel {
     getAll() {
         return this.events;
     }
-    create(name, localidade, poster, tshirt, medalha, descricao, data_hora, tipo, distacia, capacidade, percurso, preco) {
+    create(name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distacias, capacidade, ocupacao, percurso, preco) {
         const event = {
             id: this.events.length > 0 ? this.events[this.events.length - 1].id + 1 : 1,
             name: name,
+            edicao: edicao,
             localidade: localidade,
             poster: poster,
             tshirt: tshirt,
             medalha: medalha,
             descricao: descricao,
             data_hora: data_hora,
-            tipo: tipo,
+            tipos: tipo,
             distacia: distacia,
-            capacidade: capacidade,
-            descricao: descricao,
+            capacidades: capacidade,
+            ocupacao: ocupacao,
             preco: preco
         }
         this.events.push(event);

@@ -1,7 +1,7 @@
 import TeamsModel from '../model/TeamsModel'
 export default class TeamsController {
     constructor() {
-        this.teamsModel = new TeamsModel();
+        this.TeamsModel = new TeamsModel();
     }
     createTeam(name, localidade, camisola, total_atletas, membros) {
         if (!this.teamModel.getAll().some(team => team.name === name)) {
