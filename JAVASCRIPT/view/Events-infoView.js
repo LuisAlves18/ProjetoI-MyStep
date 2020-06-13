@@ -17,27 +17,41 @@ export default class EventsInfoView {
         this.eventPhoto = document.querySelector("#photo");
         this.eventCap = document.querySelector("#cap");
         this.eventType_dist = document.querySelector("#type_dist")
-
-        this.fillEventData();
         this.generateType_dist();
+        this.fillEventData();
+
 
     }
     generateType_dist() {
         const currentEvent = this.eventsController.getCurrentEvent()
-        let html = ``;
         const tipos = currentEvent.tipos
-        for (tipo in tipos) {
-            html += `<p>${tipo}</p>`
+
+        let html = `<div class="row justify-content-start">
+                    <span class="text">Type:</span>`
+
+        for (let i = 0; i < tipos.length; i++) {
+            console.log(currentEvent.tipos[i]);
+
+            html += `<p>${tipos[i]},</p>`
         }
+        html += ` </div>
+        <div class="row justify-content-start"><br>
+        <span class="text">Distance:</span>`
         const distancias = currentEvent.distancias
-        for (distancia in distancias) {
-            html += `<p>${distancia}</p>`
+        for (let i = 0; i < distancias.length; i++) {
+            console.log(currentEvent.distancias[i]);
+
+            html += `<p>${distancias[i]},</p>`
         }
+        html += ` </div>`
         return html;
     }
 
     fillEventData() {
         const currentEvent = this.eventsController.getCurrentEvent()
+
+
+
         this.eventName.innerHTML = currentEvent.name
         this.eventEdicao.innerHTML = 'Edição: ' + currentEvent.edicao
         this.eventSlogan.innerHTML = currentEvent.descricao

@@ -17,9 +17,9 @@ export default class eventModel {
             medalha: medalha,
             descricao: descricao,
             data_hora: data_hora,
-            tipos: tipo,
-            distacia: distacia,
-            capacidades: capacidade,
+            tipos: tipos,
+            distancias: distancias,
+            capacidade: capacidade,
             ocupacao: ocupacao,
             preco: preco
         }

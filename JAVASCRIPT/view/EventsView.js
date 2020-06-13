@@ -9,11 +9,28 @@ export default class EventsView {
         //verificação para forçar o utilizador a ir para o login caso não haja SessionStorage
         this.userController.LoginStatus();
         this.catalog = document.querySelector("#catalog");
-        this.btnFilter = document.querySelector("#btnFilter");
-        this.txtBand = document.querySelector("#txtBand");
+
+        this.Myform = document.querySelector("#myForm")
+
+        this.filterName = document.querySelector('#filterName')
+
+        this.chkRun = document.querySelector('#filterRun')
+        this.chkWalk = document.querySelector('#filterWalk')
+
+        this.chk5k = document.querySelector('#filter5k')
+        this.chk10k = document.querySelector('#filter10k')
+        this.chk21k = document.querySelector('#filter21k')
+        this.chk42k = document.querySelector('#filter42k')
+
+        this.btn_filter = document.querySelector('#btn_filter')
         this.renderCatalog(this.eventsController.getEvents())
-            //this.bindAddFilterEvent()
-            //this.bindAddAddEvent()
+
+    }
+    bindAddFilterEvent() {
+        this.btn_filter.addEventListener('click', () => {
+
+            this.renderCatalog(this.eventsController.getEvents(this.filterName.value, this.chkRun.checked, this.chkWalk.checked, this.chk5k.checked, this.chk10k.checked, this.chk21k.checked, this.chk42k.checked))
+        })
     }
 
     bindAddSeeMoreEvent() {

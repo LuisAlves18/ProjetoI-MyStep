@@ -1,0 +1,72 @@
+#name {
+    color: white;
+}
+
+#DataBox {
+    border-radius: 17px;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    /* or absolute */
+    top: 25%;
+    left: 20%;
+}
+
+#btnUpdateData,
+#btnMakeChanges {
+    border-radius: 28px;
+    background-color: #00cc99;
+}
+
+#errorMessage {
+    color: yellow;
+}
+
+#navnav {
+    margin-right: 12vh;
+}
+
+#HeadReg {
+    background-color: #484848;
+    border-radius: 17px;
+}
+
+#HeadReg h2 {
+    color: white;
+}
+
+#container-right {
+    float: right;
+    border-left: 1px solid black;
+    padding: 10px;
+}
+
+#container-right div {
+    margin: 3px 0 3px 0;
+}
+
+#container-right div span {
+    margin-right: 3px;
+}
+
+#container-right div h5 {
+    color: #00cc99;
+    ;
+}
+
+#container-left {
+    float: left;
+    padding: 10px;
+}
+
+#username {
+    color: white;
+}
+
+#btnUpdateData {
+    visibility: hidden;
+}
+
+#profilePic {
+    max-width: 200px;
+    max-height: 200px;
+}

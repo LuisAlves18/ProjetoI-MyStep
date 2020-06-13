@@ -13,6 +13,9 @@ export default class UserView {
         this.registerEmail = document.getElementById('email');
         this.registerBirth = document.getElementById('age');
         this.registerAdminCheck = 'false';
+        this.stride = "none";
+        this.distance = "none";
+        this.eventType = "none";
         this.imageUser = 'OUTROS/download.png';
         this.registerMessage = document.getElementById('errorMessageRegister');
 
@@ -30,10 +33,10 @@ export default class UserView {
                 if (this.registerPassword.value !== this.registerPassword2.value) {
                     throw Error('Password and Confirm Password are not equal!');
                 }
-                this.userController.createUser(this.registerUsername.value, this.registerFullname.value, this.registerPassword.value, this.registerEmail.value, this.registerBirth.value, this.imageUser,this.registerAdminCheck);
+                this.userController.createUser(this.registerUsername.value, this.registerFullname.value, this.registerPassword.value, this.registerEmail.value, this.registerBirth.value, this.imageUser, this.registerAdminCheck, this.stride, this.distance, this.eventType);
                 this.displayRegisterMessage('User Registered with success!', 'success');
                 location.href = '../HTML/login.html';
-            } catch(e) {
+            } catch (e) {
                 this.displayRegisterMessage(e, 'danger');
             }
         });

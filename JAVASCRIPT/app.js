@@ -28,8 +28,9 @@ class App {
             'index': [
                 UserViewLogout
             ],
-            'edit-profile': [
-                UserInfoView
+            'edit': [
+                UserInfoView,
+                UserViewLogout
             ],
             'training': [
                 TrainingView
@@ -42,6 +43,14 @@ class App {
             ],
             'teams': [
                 TeamsView
+            ],
+            'running-data': [
+                RunningDataView,
+                UserViewLogout
+            ],
+            'equipment-data': [
+                EquipmentDataView,
+                UserViewLogout
             ]
 
         };
@@ -90,11 +99,11 @@ class App {
                 medalha: 'medalha',
                 descricao: 'a melhor prova para perder peso',
                 data_hora: '29 de junho 17h',
-                tipo: ['run', 'walk'],
-                distacias: ['10K', '21k'],
+                tipos: ['walk'],
+                distancias: ['10K', '21k'],
                 capacidade: '3500',
                 ocupacao: '100',
-                preco: '10'
+                preco: ['10']
 
             },
             {
@@ -108,10 +117,10 @@ class App {
                 descricao: 'a melhor prova para perder peso',
                 data_hora: '29 de junho, 17h',
                 tipos: ['run', 'walk'],
-                distacias: ['10K', '21k'],
+                distancias: ['10K'],
                 capacidade: '3500',
                 ocupacao: '100',
-                preco: '10'
+                preco: ['10']
 
             },
             {
@@ -124,19 +133,66 @@ class App {
                 medalha: 'medalha',
                 descricao: 'a melhor prova para perder peso',
                 data_hora: '29 de junho 17h',
-                tipos: ['run', 'walk'],
-                distacias: ['10K', '21k'],
+                tipos: ['run', ],
+                distancias: ['10K', '21k'],
                 capacidade: '3500',
                 ocupacao: '100',
-                preco: '10'
+                preco: ['10']
+
+            }, {
+                id: 4,
+                name: 'prova ',
+                edicao: '3',
+                localidade: 'matosas',
+                poster: 'OUTROS/download.png',
+                tshirt: '',
+                medalha: 'medalha',
+                descricao: 'a melhor prova para perder peso',
+                data_hora: '29 de junho 17h',
+                tipos: ['run', ],
+                distancias: ['10K', '21k'],
+                capacidade: '3500',
+                ocupacao: '100',
+                preco: ['10']
 
             }
         ];
+        const teams = [{
+            id: 1,
+            name: 'Os reis ',
+            localidade: "Porto",
+            camisola: "",
+            total_atletas: "3",
+            membros: ["joao", "luis", "antonio", "tiago"],
+            logo: "OUTROS/download.png"
+
+        }, {
+            id: 2,
+            name: 'TSIW ',
+            localidade: "Porto",
+            camisola: "",
+            total_atletas: "3",
+            membros: ["ze", "luis", "manel", "tiago"],
+            logo: "OUTROS/download.png"
+
+        }, {
+            id: 3,
+            name: 'TSIW ',
+            localidade: "Porto",
+            camisola: "",
+            total_atletas: "3",
+            membros: ["ze", "luis", "manel", "tiago"],
+            logo: "OUTROS/download.png"
+
+        }]
         if (!localStorage.users) {
             localStorage.setItem('users', JSON.stringify(users));
         }
         if (!localStorage.events) {
             localStorage.setItem('events', JSON.stringify(events));
+        }
+        if (!localStorage.teams) {
+            localStorage.setItem('teams', JSON.stringify(teams));
         }
     }
 }
