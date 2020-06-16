@@ -8,16 +8,16 @@ export default class UserViewLogout {
         this.logoutButton = document.getElementById('logout');
         this.loggedUser = document.getElementById('name');
 
-        this.userController.personLogged();
+        //this.userController.personLogged();
         this.bindAddLogoutEvent();
-        
-        
+
+
     }
 
     bindAddLogoutEvent() {
         this.logoutButton.addEventListener('click', event => {
             this.userController.logoutUser();
-           
+
             location.href = '../HTML/login.html';
         });
     }
@@ -33,17 +33,17 @@ export default class UserViewLogout {
             location.href = 'HTML/login.html'
         } */
 
-            if (sessionStorage.getItem('loggedUser')!== null){
-                this.personLogged =  sessionStorage.getItem('loggedUser')
+        if (sessionStorage.getItem('loggedUser') !== null) {
+            this.personLogged = sessionStorage.getItem('loggedUser')
                 //this.loggedUser.innerHTML = this.personLogged
-            } else if (sessionStorage.getItem('loggedAdmin')!==null){
-                this.personLogged = sessionStorage.getItem('loggedAdmin')
+        } else if (sessionStorage.getItem('loggedAdmin') !== null) {
+            this.personLogged = sessionStorage.getItem('loggedAdmin')
                 //this.loggedUser.innerHTML = this.personLogged
-            } else {
-                location.href = '../HTML/login.html';
-            }
-           
-            
-        
+        } else {
+            location.href = '../HTML/login.html';
+        }
+
+
+
     }
 }

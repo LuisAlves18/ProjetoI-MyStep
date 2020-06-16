@@ -29,3 +29,8 @@
     background-color: white;
     color: #00cc99;
 }
+
+.card {
+    margin-top: 3vh;
+    border-radius: 17px;
+}

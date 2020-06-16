@@ -3,9 +3,9 @@ export default class TeamsController {
     constructor() {
         this.teamsModel = new TeamsModel();
     }
-    createTeam(name, localidade, camisola, total_atletas, membros) {
-        if (!this.teamModel.getAll().some(team => team.name === name)) {
-            this.teamsModel.create(name, localidade, camisola, total_atletas, membros);
+    createTeam(name, localidade, camisola, total_atletas, membros, logo, owner) {
+        if (!this.teamsModel.getAll().some(team => team.name === name)) {
+            this.teamsModel.create(name, localidade, camisola, total_atletas, membros, logo, owner);
         } else {
             throw Error(`Team with The name "${name}" already exists!`);
         }
@@ -19,7 +19,7 @@ export default class TeamsController {
     setCurrentTeam(id) {
         this.teamsModel.setCurrentTeam(id)
     }
-    getCurrentEvent() {
+    getCurrentTeam() {
         return this.teamsModel.getCurrentTeam()
     }
 }

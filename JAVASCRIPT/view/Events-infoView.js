@@ -17,9 +17,24 @@ export default class EventsInfoView {
         this.eventPhoto = document.querySelector("#photo");
         this.eventCap = document.querySelector("#cap");
         this.eventType_dist = document.querySelector("#type_dist")
+        this.btnjoin = document.querySelector("#join")
         this.generateType_dist();
+        this.bindJoinRace();
         this.fillEventData();
 
+
+    }
+    bindJoinRace() {
+        const currentEvent = this.eventsController.getCurrentEvent()
+        this.btnjoin.addEventListener('click', event => {
+            event.preventDefault()
+            let membros = currentEvent.participantes
+            let Nocupacao = currentEvent.ocupacao
+            membros.push(this.userController.LoginStatus())
+            Nocupacao = membros.length + 1;
+            console.log(currentEvent.participantes);
+            this.eventsController.updateMembersOcupation(currentEvent.id, currentEvent.name, currentEvent.edicao, currentEvent.localidade, currentEvent.poster, currentEvent.tshirt, currentEvent.medalha, currentEvent.descricao, currentEvent.data_hora, currentEvent.tipos, currentEvent.distancias, currentEvent.capacidade, Nocupacao, currentEvent.preco, membros);
+        })
 
     }
     generateType_dist() {
@@ -30,7 +45,7 @@ export default class EventsInfoView {
                     <span class="text">Type:</span>`
 
         for (let i = 0; i < tipos.length; i++) {
-            console.log(currentEvent.tipos[i]);
+            //console.log(currentEvent.tipos[i]);
 
             html += `<p>${tipos[i]},</p>`
         }
@@ -39,7 +54,7 @@ export default class EventsInfoView {
         <span class="text">Distance:</span>`
         const distancias = currentEvent.distancias
         for (let i = 0; i < distancias.length; i++) {
-            console.log(currentEvent.distancias[i]);
+            //console.log(currentEvent.distancias[i]);
 
             html += `<p>${distancias[i]},</p>`
         }
@@ -49,15 +64,12 @@ export default class EventsInfoView {
 
     fillEventData() {
         const currentEvent = this.eventsController.getCurrentEvent()
-
-
-
         this.eventName.innerHTML = currentEvent.name
         this.eventEdicao.innerHTML = 'Edição: ' + currentEvent.edicao
         this.eventSlogan.innerHTML = currentEvent.descricao
         this.eventPhoto.src = currentEvent.poster;
         this.eventData.innerHTML = currentEvent.data_hora;
-        this.eventCap.innerHTML = 'Capacity: ' + currentEvent.capacidade;
+        this.eventCap.innerHTML = 'Capacity: ' + currentEvent.ocupacao + '/' + currentEvent.capacidade;
         this.eventType_dist.innerHTML = this.generateType_dist();
     }
 

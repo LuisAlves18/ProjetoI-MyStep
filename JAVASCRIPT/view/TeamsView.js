@@ -10,12 +10,19 @@ export default class TeamsView {
         this.userController.LoginStatus();
 
         this.catalog = document.querySelector("#catalog");
+        this.btnCreate = document.querySelector("#GoCreate")
         this.renderCatalog(this.teamsController.getTeams())
+        this.bindGoCreateTeam();
+    }
+    bindGoCreateTeam() {
+        this.btnCreate.addEventListener("click", function() {
+            location.href = 'HTML/create-team.html'
+        })
     }
     bindAddSeeMoreTeam() {
         for (const btnSee of document.querySelectorAll(".see")) {
-            btnSee.addEventListener('click', event => {
-                this.teamsController.setCurrentTeam(event.target.id)
+            btnSee.addEventListener('click', team => {
+                this.teamsController.setCurrentTeam(team.target.id)
                 location.href = 'HTML/teams-info.html';
             })
         }
@@ -34,12 +41,12 @@ export default class TeamsView {
             //this._renderAddEventButton(this.userController.checkLoginStatus());
 
         //this.bindAddRemoveEvent()
-        //this.bindAddSeeMoreEvent()
+        this.bindAddSeeMoreTeam()
     }
 
     _generateTeamCard(team) {
         let html = `
-        <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="card">
                 <div class="card-body">
                 <img class="card-img-top" src="${team.logo}" alt="">

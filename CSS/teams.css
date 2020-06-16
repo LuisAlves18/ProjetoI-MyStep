@@ -1,0 +1,21 @@
+.see {
+    border-radius: 28px;
+    color: white;
+    background-color: #00cc99;
+}
+
+.see:hover {
+    background-color: #00cc99;
+    color: black;
+}
+
+.card {
+    margin-top: 3vh;
+    border-radius: 17px;
+}
+
+#GoCreate {
+    border-radius: 28px;
+    background-color: #00cc99;
+    margin-top: 3vh;
+}

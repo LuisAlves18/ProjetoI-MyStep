@@ -7,7 +7,7 @@ export default class userModel {
             return this.users;
         }
         //criar um user
-    create(username, name, password, email, birth, image, admin, stride, distance, eventType) {
+    create(username, name, password, email, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes) {
             const user = {
                 id: this.users.length > 0 ? this.users[this.users.length - 1].id + 1 : 1,
                 username: username,
@@ -19,7 +19,10 @@ export default class userModel {
                 admin: admin,
                 stride: stride,
                 distance: distance,
-                eventType: eventType
+                eventType: eventType,
+                shirt: shirt,
+                shorts: shorts,
+                shoes: shoes
             }
             this.users.push(user);
             this._persist();
@@ -59,7 +62,7 @@ export default class userModel {
         localStorage.setItem('users', JSON.stringify(this.users));
     }
 
-    updatePassword(id, username, name, nPassword, email, birth, image, admin, stride, distance, eventType) {
+    updatePassword(id, username, name, nPassword, email, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes) {
         this.users = this.users.filter(user => user.username != username)
         this._persist();
         const user = {
@@ -73,13 +76,16 @@ export default class userModel {
             admin: admin,
             stride: stride,
             distance: distance,
-            eventType: eventType
+            eventType: eventType,
+            shirt: shirt,
+            shorts: shorts,
+            shoes: shoes
         }
         this.users.push(user);
         this._persist();
     }
 
-    updateEmail(id, username, name, password, nEmail, birth, image, admin, stride, distance, eventType) {
+    updateEmail(id, username, name, password, nEmail, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes) {
         this.users = this.users.filter(user => user.username != username)
         this._persist();
         const user = {
@@ -93,13 +99,16 @@ export default class userModel {
             admin: admin,
             stride: stride,
             distance: distance,
-            eventType: eventType
+            eventType: eventType,
+            shirt: shirt,
+            shorts: shorts,
+            shoes: shoes
         }
         this.users.push(user);
         this._persist();
     }
 
-    updatePhoto(id, username, name, password, email, birth, nImage, admin, stride, distance, eventType) {
+    updatePhoto(id, username, name, password, email, birth, nImage, admin, stride, distance, eventType, shirt, shorts, shoes) {
         this.users = this.users.filter(user => user.username != username)
         this._persist();
         const user = {
@@ -113,13 +122,16 @@ export default class userModel {
             admin: admin,
             stride: stride,
             distance: distance,
-            eventType: eventType
+            eventType: eventType,
+            shirt: shirt,
+            shorts: shorts,
+            shoes: shoes
         }
         this.users.push(user);
         this._persist();
     }
 
-    updateRunData(id, username, name, password, email, birth, image, admin, nStride, nDistance, nEventType) {
+    updateRunData(id, username, name, password, email, birth, image, admin, nStride, nDistance, nEventType, shirt, shorts, shoes) {
         this.users = this.users.filter(user => user.username != username)
         this._persist();
         const user = {
@@ -133,7 +145,34 @@ export default class userModel {
             admin: admin,
             stride: nStride,
             distance: nDistance,
-            eventType: nEventType
+            eventType: nEventType,
+            shirt: shirt,
+            shorts: shorts,
+            shoes: shoes
+        }
+        this.users.push(user);
+        this._persist();
+    }
+
+    updateEquipmentData(id, username, name, password, email, birth, image, admin, stride, distance, eventType, nShirt, nShorts, nShoes) {
+        this.users = this.users.filter(user => user.username != username)
+        this._persist();
+        const user = {
+            id: id,
+            username: username,
+            fullname: name,
+            password: password,
+            email: email,
+            birth: birth,
+            image: image,
+            admin: admin,
+            stride: stride,
+            distance: distance,
+            eventType: eventType,
+            shirt: nShirt,
+            shorts: nShorts,
+            shoes: nShoes
+
         }
         this.users.push(user);
         this._persist();

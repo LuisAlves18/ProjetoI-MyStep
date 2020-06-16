@@ -2,8 +2,8 @@
     border-radius: 25px;
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
-    margin: 55px 0px 5px 5px;
-    width: 80px;
+    margin: 55px 0px 5px 25px;
+    width: 100px;
     background-color: #00cc99;
     color: black;
     font-weight: bold;
@@ -14,20 +14,21 @@
     border-radius: 25px;
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
-    margin: 55px 0px 5px 5px;
-    width: 80px;
+    margin: 55px 0px 5px 25px;
+    width: 100px;
     background-color: black;
-    color:white;
+    color: white;
     font-weight: bold;
     text-align: center;
 }
 
-#startLocation,#endLocation {
+#startLocation,
+#endLocation {
     border-radius: 25px;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
     margin: 55px 5px 5px 0px;
-    width: 150px;
+    width: 300px;
     background-color: white;
     color: black;
     font-weight: bold;
@@ -36,16 +37,21 @@
 
 #mapDiv {
     margin-top: 75px;
-    background-color: black;
-    width: 700px;
+    border: 1px solid;
+    width: 1000px;
     height: 500px;
+    border-radius: 25px;
 }
 
-#btnStart,#btnStop, #btnSave {
+#btnStart,
+#btnStop,
+#btnSave {
     border-radius: 28px;
-    
     width: 100px;
-    
+}
+
+#btnGetRoutes {
+    border-radius: 28px;
 }
 
 #btnStart {
@@ -54,7 +60,8 @@
     background-color: #00cc99;
 }
 
-#btnStop {
+#btnStop,
+#btnGetRoutes {
     color: white;
     background-color: black;
 }
@@ -68,3 +75,8 @@
 #timer {
     font-size: 30px;
 }
+
+
+/* #hiddenInput {
+    display: none;
+} */

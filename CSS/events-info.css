@@ -34,3 +34,8 @@
 .text {
     color: #00cc99;
 }
+
+#join {
+    background-color: #00cc99;
+    border-radius: 28px;
+}

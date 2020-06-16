@@ -6,7 +6,7 @@ export default class teamsModel {
     getAll() {
         return this.teams;
     }
-    create(name, localidade, camisola, total_atletas, membros, logo) {
+    create(name, localidade, camisola, total_atletas, membros, logo, owner) {
         const team = {
             id: this.teams.length > 0 ? this.teams[this.teams.length - 1].id + 1 : 1,
             name: name,
@@ -14,7 +14,8 @@ export default class teamsModel {
             camisola: camisola,
             total_atletas: total_atletas,
             membros: membros,
-            logo: logo
+            logo: logo,
+            owner: owner
         }
         this.teams.push(team);
         this._persist();

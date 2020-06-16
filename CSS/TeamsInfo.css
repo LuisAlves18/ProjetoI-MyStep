@@ -1,0 +1,27 @@
+#info {
+    background-color: #707070;
+    border-radius: 28px;
+    margin-top: 5vh;
+    margin-right: 5vh;
+}
+
+#header {
+    border-radius: 28px;
+    background-color: #484848;
+}
+
+#name {
+    color: #00cc99
+}
+
+#join {
+    background-color: #00cc99;
+    color: white;
+    border-radius: 28px;
+}
+
+#photo,
+#camisola,
+#TblMembers {
+    margin-top: 3vh;
+}

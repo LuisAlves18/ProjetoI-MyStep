@@ -6,9 +6,9 @@ export default class UserController {
 
     }
 
-    createUser(username, fullname, password, email, birth, image, admin, stride, distance, eventType) {
+    createUser(username, fullname, password, email, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes) {
         if (!this.userModel.getAll().some(user => user.username === username)) {
-            this.userModel.create(username, fullname, password, email, birth, image, admin, stride, distance, eventType);
+            this.userModel.create(username, fullname, password, email, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes);
         } else {
             throw Error(`User with username "${username}" already exists!`);
         }
@@ -84,11 +84,11 @@ export default class UserController {
             for (const user of this.userModel.getAll()) {
                 if (sessionStorage.getItem('loggedUser') !== null) {
                     if (sessionStorage.getItem('loggedUser') === user.username) {
-                        this.userModel.updateEmail(user.id, user.username, user.fullname, user.password, nEmail, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType)
+                        this.userModel.updateEmail(user.id, user.username, user.fullname, user.password, nEmail, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes)
                     }
                 } else if (sessionStorage.getItem('loggedAdmin') !== null) {
                     if (sessionStorage.getItem('loggedUser') === user.username) {
-                        this.userModel.updateEmail(user.id, user.username, user.fullname, user.password, nEmail, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType)
+                        this.userModel.updateEmail(user.id, user.username, user.fullname, user.password, nEmail, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes)
                     }
                 }
             }
@@ -104,7 +104,7 @@ export default class UserController {
                 if (sessionStorage.getItem('loggedUser') === user.username) {
                     if (nPassword != user.password) {
                         if (nPassword === nConfPassword) {
-                            this.userModel.updateEmail(user.id, user.username, user.fullname, nPassword, user.email, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType)
+                            this.userModel.updatePassword(user.id, user.username, user.fullname, nPassword, user.email, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes)
                         } else {
                             throw Error(`The passwords don't match!`)
                         }
@@ -116,7 +116,7 @@ export default class UserController {
                 if (sessionStorage.getItem('loggedUser') === user.username) {
                     if (nPassword != user.password) {
                         if (nPassword === nConfPassword) {
-                            this.userModel.updateEmail(user.id, user.username, user.fullname, nPassword, user.email, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType)
+                            this.userModel.updatePassowrd(user.id, user.username, user.fullname, nPassword, user.email, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes)
                         } else {
                             throw Error(`The passwords don't match!`)
                         }
@@ -132,11 +132,11 @@ export default class UserController {
         for (const user of this.userModel.getAll()) {
             if (sessionStorage.getItem('loggedUser') !== null) {
                 if (sessionStorage.getItem('loggedUser') === user.username) {
-                    this.userModel.updatePhoto(user.id, user.username, user.fullname, user.password, user.email, user.birth, nImage, user.admin, user.stride, user.distance, user.eventType)
+                    this.userModel.updatePhoto(user.id, user.username, user.fullname, user.password, user.email, user.birth, nImage, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes)
                 }
             } else if (sessionStorage.getItem('loggedAdmin') !== null) {
                 if (sessionStorage.getItem('loggedUser') === user.username) {
-                    this.userModel.updatePhoto(user.id, user.username, user.fullname, user.password, user.email, user.birth, nImage, user.admin, user.stride, user.distance, user.eventType)
+                    this.userModel.updatePhoto(user.id, user.username, user.fullname, user.password, user.email, user.birth, nImage, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes)
                 }
             }
         }
@@ -146,7 +146,17 @@ export default class UserController {
         for (const user of this.userModel.getAll()) {
             if (sessionStorage.getItem('loggedUser') !== null) {
                 if (sessionStorage.getItem('loggedUser') === user.username) {
-                    this.userModel.updateRunData(user.id, user.username, user.fullname, user.password, user.email, user.birth, user.image, user.admin, nStride, nDistance, nEventType);
+                    this.userModel.updateRunData(user.id, user.username, user.fullname, user.password, user.email, user.birth, user.image, user.admin, nStride, nDistance, nEventType, user.shirt, user.shorts, user.shoes);
+                }
+            }
+        }
+    }
+
+    updateEquipmentData(nShirt, nShorts, nShoes) {
+        for (const user of this.userModel.getAll()) {
+            if (sessionStorage.getItem('loggedUser') !== null) {
+                if (sessionStorage.getItem('loggedUser') === user.username) {
+                    this.userModel.updateEquipmentData(user.id, user.username, user.fullname, user.password, user.email, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, nShirt, nShorts, nShoes);
                 }
             }
         }

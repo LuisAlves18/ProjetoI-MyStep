@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Step</title>
+
+    <base href="/">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/create-team.css">
+</head>
+
+<body>
+    <div class="content-fluid">
+        <nav class="navbar navbar-expand-md" id=navbar>
+            <!-- Logo -->
+            <a class="navbar-brand" href="HTML/index.html"><img src="OUTROS\LogoW.png" height="40px" alt=""></a>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="cNavbar">
+                <ul class="navbar-nav ml-auto" id="navnav">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/index.html">
+                            Home
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item ">
+                        <a class="nav-link" href="HTML/training.html">
+                            Training
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="HTML/events.html">
+                            Events
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="HTML/teams.html">
+                            Teams
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown " id="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="name">username </span><img src="OUTROS/download.png" height="30px">
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Achievements</a>
+                            <a class="dropdown-item" href="#">Statistics</a>
+                            <a class="dropdown-item" href="/HTML/edit.html">Edit Profile</a>
+                            <a class="dropdown-item" href="/HTML/running-data.html">Running Data</a>
+                            <a class="dropdown-item" href="/HTML/equipment-data.html">Equipment Data</a>
+                            <button class="dropdown-item" id="logout" type="button">Log out</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--Resto do body-->
+        <div class="row justify-content-center">
+            <div class="col-5" id="box">
+                <div class="row justify-content-center" id="header">
+                    <div class="col-12 text-center">
+                        <h3>Create Team </h3>
+                    </div>
+                </div>
+                <form id="frmCreate" class="text-center">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="" id="teamName" aria-describedby="helpId" placeholder="Team name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="" id="localidade" aria-describedby="helpId" placeholder="Team City">
+
+                    </div>
+                    <div class="form-group">
+                        <input type="file" accept="image/*" class="form-control" name="" id="shirt" aria-describedby="helpId" placeholder="Shirt">
+
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="form-control" name="" id="logo" aria-describedby="helpId" placeholder="Logo">
+                    </div>
+                    <input type="submit" id="create" value="Create" class="btn btn-success">
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="module" src="JAVASCRIPT/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

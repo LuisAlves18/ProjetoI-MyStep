@@ -1,0 +1,24 @@
+#name,
+#localidade,
+#shirt,
+#logo,
+#create {
+    border-radius: 28px;
+}
+
+#box {
+    margin-top: 3vh;
+    background-color: #707070;
+    border-radius: 28px;
+}
+
+#header {
+    margin-bottom: 2vh;
+    background-color: #404040;
+    border-radius: 28px;
+    color: #00cc99;
+}
+
+#create {
+    background-color: #00cc99;
+}

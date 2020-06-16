@@ -3,9 +3,9 @@ export default class EventsController {
     constructor() {
         this.eventsModel = new EventsModel();
     }
-    createEvent(name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distancias, capacidade, ocupacao, percurso, preco) {
+    createEvent(name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distancias, capacidade, ocupacao, percurso, preco, membros) {
         if (!this.EventModel.getAll().some(event => team.event === event)) {
-            this.teamsEvent.create(name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distancias, capacidade, ocupacao, percurso, preco);
+            this.teamsEvent.create(name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distancias, capacidade, ocupacao, percurso, preco, membros);
         } else {
             throw Error(`The Event with the name "${name}" already exists!`);
         }
@@ -19,6 +19,10 @@ export default class EventsController {
         return events;
         let filteredEvents = [];
 
+
+    }
+    updateMembersOcupation(id, name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distancias, capacidade, Nocupacao, preco, membros) {
+        this.eventsModel.updateMembersOcupation(id, name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distancias, capacidade, Nocupacao, preco, membros);
 
     }
     setCurrentEvent(id) {

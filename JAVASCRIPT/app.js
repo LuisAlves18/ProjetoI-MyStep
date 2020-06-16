@@ -7,6 +7,10 @@ import TrainingView from './view/TrainingView.js'
 import EventsView from './view/EventsView.js'
 import EventsInfoView from './view/Events-infoView.js'
 import TeamsView from './view/TeamsView.js'
+import RunningDataView from './view/RunningDataView.js'
+import EquipmentDataView from './view/EquipmentDataView.js'
+import TeamsInfoView from './view/TeamsInfoView.js'
+import CreateTeamView from './view/CreateTeamView.js'
 
 
 
@@ -44,6 +48,9 @@ class App {
             'teams': [
                 TeamsView
             ],
+            'teams-info': [
+                TeamsInfoView
+            ],
             'running-data': [
                 RunningDataView,
                 UserViewLogout
@@ -51,7 +58,13 @@ class App {
             'equipment-data': [
                 EquipmentDataView,
                 UserViewLogout
+            ],
+            'create-team': [
+                CreateTeamView,
+                UserViewLogout
             ]
+
+
 
         };
 
@@ -91,7 +104,7 @@ class App {
         }];
         const events = [{
                 id: 1,
-                name: 'prova ',
+                name: 'prova0 ',
                 edicao: '3',
                 localidade: 'matosas',
                 poster: 'OUTROS/download.png',
@@ -103,12 +116,13 @@ class App {
                 distancias: ['10K', '21k'],
                 capacidade: '3500',
                 ocupacao: '100',
-                preco: ['10']
+                preco: ['10'],
+                participantes: []
 
             },
             {
                 id: 2,
-                name: 'prova ',
+                name: 'prova1 ',
                 edicao: '3',
                 localidade: 'matosas',
                 poster: 'OUTROS/download.png',
@@ -120,12 +134,13 @@ class App {
                 distancias: ['10K'],
                 capacidade: '3500',
                 ocupacao: '100',
-                preco: ['10']
+                preco: ['10'],
+                participantes: []
 
             },
             {
                 id: 3,
-                name: 'prova ',
+                name: 'prova2 ',
                 edicao: '3',
                 localidade: 'matosas',
                 poster: 'OUTROS/download.png',
@@ -137,11 +152,11 @@ class App {
                 distancias: ['10K', '21k'],
                 capacidade: '3500',
                 ocupacao: '100',
-                preco: ['10']
-
+                preco: ['10'],
+                participantes: []
             }, {
                 id: 4,
-                name: 'prova ',
+                name: 'prova3 ',
                 edicao: '3',
                 localidade: 'matosas',
                 poster: 'OUTROS/download.png',
@@ -153,7 +168,8 @@ class App {
                 distancias: ['10K', '21k'],
                 capacidade: '3500',
                 ocupacao: '100',
-                preco: ['10']
+                preco: ['10'],
+                participantes: []
 
             }
         ];
@@ -161,7 +177,7 @@ class App {
             id: 1,
             name: 'Os reis ',
             localidade: "Porto",
-            camisola: "",
+            camisola: "OUTROS/download.png",
             total_atletas: "3",
             membros: ["joao", "luis", "antonio", "tiago"],
             logo: "OUTROS/download.png"
@@ -170,7 +186,7 @@ class App {
             id: 2,
             name: 'TSIW ',
             localidade: "Porto",
-            camisola: "",
+            camisola: "OUTROS/download.png",
             total_atletas: "3",
             membros: ["ze", "luis", "manel", "tiago"],
             logo: "OUTROS/download.png"
@@ -179,7 +195,7 @@ class App {
             id: 3,
             name: 'TSIW ',
             localidade: "Porto",
-            camisola: "",
+            camisola: "OUTROS/download.png",
             total_atletas: "3",
             membros: ["ze", "luis", "manel", "tiago"],
             logo: "OUTROS/download.png"
