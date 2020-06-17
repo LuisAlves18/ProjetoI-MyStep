@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyStep </title>
+        <base href="/">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/manage-users.css">
+    </title>
+</head>
+<body>
+    <div class="content-fluid">
+        <nav class="navbar navbar-expand-md" id=navbar>
+            <!-- Logo -->
+            <a class="navbar-brand" href="HTML/index.html"><img src="OUTROS\LogoW.png" height="40px" alt=""></a>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="cNavbar">
+                <ul class="navbar-nav ml-auto" id="navnav">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#" id="current">
+                            Home
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item ">
+                        <a class="nav-link" href="HTML/training.html">
+                            Training
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="HTML/events.html">
+                            Events
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="HTML/teams.html">
+                            Teams
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown " id="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="name">username </span><img src="OUTROS/download.png" height="30px">
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Achievements</a>
+                            <a class="dropdown-item" href="#">Statistics</a>
+                            <a class="dropdown-item" href="HTML/edit.html">Edit Profile</a>
+                            <a class="dropdown-item" href="HTML/running-data.html" id="runningData">Running Data</a>
+                            <a class="dropdown-item" href="HTML/equipment-data.html" id="equipmentData">Equipment Data</a>
+                            <a class="dropdown-item" href="HTML/manage-users.html" id="manageUsers">Manage Users</a>
+                            <a class="dropdown-item" href="HTML/manage-events.html" id="manageEvents">Manage Events</a>
+                            <a class="dropdown-item" href="HTML/manage-teams.html" id="manageTeams">Manage Teams</a>
+                            <button class="dropdown-item" id="logout" type="button">Log out</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--Resto do body-->
+
+        <div id="RegBox" class="col-4">
+            <div class="row justify-content-center" id="HeadReg">
+                <h4>Manage Users</h4>
+            </div>
+            <div id="tableContainer" class="row justify-content-center">
+                <p id="tableUsers"></p>
+                
+                <div class="row justify-content-center">
+                    <div id="divButtonAddAdmin">
+                        <button class="btn btn-outline-light" id="btnAddAdmin" data-target="#modalAddAdmin" data-toggle="modal">Add New Admin</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="modalAddAdmin" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add a new Admin</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="AddBox" class="col-12">
+                            
+                            <form id="frmAddAdmin">
+
+                                <div class="form-row  justify-content-center">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control" id="AdminName" placeholder="First & last Name" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control" id="AdminUsername" placeholder="Username" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row justify-content-center">
+                                    <div class="col-6">
+                                        <input type="email" class="form-control form-control" id="AdminEmail" placeholder="Email" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="date" class="form-control form-control" id="AdminAge" placeholder="Age" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row justify-content-center">
+                                    <div class="col-6 input-icons">
+                                        <input type="password" class="form-control form-control" id="AdminPassw" placeholder="Password" required >                                       
+                                    </div>
+                                    <div class="col-6 input-icons" >
+                                        <input type="password" class="form-control form-control" id="AdminConfpassw" placeholder="Confirm Password" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row justify-content-center">
+                                    <div class="col-6">
+                                        <p id="errorMessageAdmin"></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-outline-light" id="btnCreateAdmin" type="submit">
+                                            Add Admin
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeModal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="JAVASCRIPT/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+</body>
+</html>

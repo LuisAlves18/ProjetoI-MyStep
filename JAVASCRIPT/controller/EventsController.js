@@ -12,12 +12,12 @@ export default class EventsController {
     }
     getEvents(filterName, chkRun, chkWalk, chk5k, chk10k, chk21k, chk42k) {
         const events = this.eventsModel.getAll();
-        if (filterName === '' && chkRun.checked == false && chkWalk.checked == false && chk5k.checked == false && chk10k.checked == false && chk21k.checked == false && chk42k.checked == false) {
+        if (filterName === '' && chkRun.checked === false && chkWalk.checked === false && chk5k.checked === false && chk10k.checked === false && chk21k.checked === false && chk42k.checked === false) {
             console.log("entrei");
             return events;
         }
         return events;
-        let filteredEvents = [];
+
 
 
     }

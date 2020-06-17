@@ -20,6 +20,22 @@ export default class teamsModel {
         this.teams.push(team);
         this._persist();
     }
+    updateMembersTotal(id, name, localidade, camisola, Ntotal_atletas, Nmembros, logo, owner) {
+        this.teams = this.teams.filter(team => team.name != name)
+        this._persist();
+        const team = {
+            id: id,
+            name: name,
+            localidade: localidade,
+            camisola: camisola,
+            total_atletas: Ntotal_atletas,
+            membros: Nmembros,
+            logo: logo,
+            owner: owner
+        }
+        this.teams.push(team);
+        this._persist();
+    }
     remove(team) {
         this.teams = this.teams.filter(name => team.name != name)
         this._persist()

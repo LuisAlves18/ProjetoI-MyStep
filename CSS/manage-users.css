@@ -1,0 +1,85 @@
+#RegBox {
+    border-radius: 17px;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    /* or absolute */
+    top: 30%;
+    left: 35%;
+}
+
+
+#HeadReg {
+    background-color: #484848;
+    border-radius: 17px;
+}
+
+
+
+table tr, td{
+   border: 1px solid black;
+   padding: 15px;
+   
+}
+
+table td {
+    color: white
+}
+
+table th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+table {
+    margin: 25px 25px 25px 25px;
+}
+
+#divButtonAddAdmin {
+    margin-bottom: 15px;
+    
+}
+
+#btnAddAdmin {
+    background-color:  #00cc99;
+    border-radius: 28px;
+}
+
+#btnCreateAdmin {
+    background-color:  #00cc99;
+    border-radius: 28px;
+    margin: 5px 0px 5px 0px;
+}
+
+#closeModal {
+    border-radius: 28px;
+}
+
+#AdminName,
+#AdminUsername,
+#AdminAge,
+#AdminEmail,
+#AdminPassw,
+#AdminConfpassw {
+    border-radius: 25px;
+    margin: 10px 5px 5px 5px;
+}
+
+.modal-header {
+    background-color: #484848;
+}
+
+.modal-body {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    color: white;
+}
+
+.modal-footer {
+    background-color: #484848;
+}
+
+#errorMessageAdmin {
+    color: yellow
+}

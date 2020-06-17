@@ -4,12 +4,21 @@ export default class UserViewLogout {
     constructor() {
 
         this.userController = new UserController();
+        this.userController.LoginStatus();
 
         this.logoutButton = document.getElementById('logout');
         this.loggedUser = document.getElementById('name');
 
+        //dom display admin (running and equipment data, manage entities page)
+        this.runningDataDisplay = document.getElementById('runningData');
+        this.equipmentDataDisplay = document.getElementById('equipmentData');
+        this.manageUsers = document.getElementById('manageUsers');
+        this.manageEvents = document.getElementById('manageEvents');
+        this.manageTeams = document.getElementById('manageTeams');
+
         //this.userController.personLogged();
         this.bindAddLogoutEvent();
+        this.displayAdmin();
 
 
     }
@@ -21,6 +30,27 @@ export default class UserViewLogout {
             location.href = '../HTML/login.html';
         });
     }
+
+    displayAdmin() {
+        if (this.userController.CheckAdminLogin()) {
+            this.runningDataDisplay.style.display = "none";
+            this.equipmentDataDisplay.style.display = "none";
+        } else {
+            this.manageUsers.style.display = "none";
+            this.manageEvents.style.display = "none";
+            this.manageTeams.style.display = "none";
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 
     checkLogged() {
         /* if (this.userController.checkLoginStatus()!== null) {
@@ -46,4 +76,7 @@ export default class UserViewLogout {
 
 
     }
+
+
+
 }

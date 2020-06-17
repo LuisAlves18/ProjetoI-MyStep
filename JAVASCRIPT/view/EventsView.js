@@ -27,8 +27,8 @@ export default class EventsView {
 
     }
     bindAddFilterEvent() {
-        this.btn_filter.addEventListener('click', () => {
-
+        this.Myform.addEventListener('submit', event => {
+            event.preventDefault();
             this.renderCatalog(this.eventsController.getEvents(this.filterName.value, this.chkRun.checked, this.chkWalk.checked, this.chk5k.checked, this.chk10k.checked, this.chk21k.checked, this.chk42k.checked))
         })
     }

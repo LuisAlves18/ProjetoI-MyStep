@@ -11,6 +11,7 @@ import RunningDataView from './view/RunningDataView.js'
 import EquipmentDataView from './view/EquipmentDataView.js'
 import TeamsInfoView from './view/TeamsInfoView.js'
 import CreateTeamView from './view/CreateTeamView.js'
+import AdminView from './view/AdminView.js'
 
 
 
@@ -62,7 +63,20 @@ class App {
             'create-team': [
                 CreateTeamView,
                 UserViewLogout
+            ],
+            'manage-users': [
+                UserViewLogout,
+                AdminView
+            ],
+            'manage-teams': [
+                UserViewLogout,
+                AdminView
+            ],
+            'manage-events': [
+                UserViewLogout,
+                AdminView
             ]
+
 
 
 
@@ -99,7 +113,15 @@ class App {
             password: 'admin',
             email: 'admin@myStep.com',
             birth: '22/06/2000',
-            admin: 'true'
+            image: 'OUTROS/download.png',
+            admin: 'true',
+            stride: 'none',
+            distance: 'none',
+            eventType: 'none',
+            shirt: 'none',
+            shorts: 'none',
+            shoes: 'none',
+            status: 'available'
 
         }];
         const events = [{
@@ -180,7 +202,8 @@ class App {
             camisola: "OUTROS/download.png",
             total_atletas: "3",
             membros: ["joao", "luis", "antonio", "tiago"],
-            logo: "OUTROS/download.png"
+            logo: "OUTROS/download.png",
+            owner: "luis"
 
         }, {
             id: 2,
@@ -189,16 +212,18 @@ class App {
             camisola: "OUTROS/download.png",
             total_atletas: "3",
             membros: ["ze", "luis", "manel", "tiago"],
-            logo: "OUTROS/download.png"
+            logo: "OUTROS/download.png",
+            owner: "luis"
 
         }, {
             id: 3,
-            name: 'TSIW ',
+            name: 'TSIW1 ',
             localidade: "Porto",
             camisola: "OUTROS/download.png",
             total_atletas: "3",
             membros: ["ze", "luis", "manel", "tiago"],
-            logo: "OUTROS/download.png"
+            logo: "OUTROS/download.png",
+            owner: "luis"
 
         }]
         if (!localStorage.users) {

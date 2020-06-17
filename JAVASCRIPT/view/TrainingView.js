@@ -1,8 +1,10 @@
 import UserController from '../controller/UserController.js'
+import TrainingController from '../controller/TrainingController.js'
 
 export default class TrainingView {
     constructor() {
         this.userController = new UserController();
+        this.trainingController = new TrainingController();
 
         this.userController.LoginStatus();
 
@@ -18,33 +20,70 @@ export default class TrainingView {
         //dom variavel de distancia
         this.runDistance = document.getElementById('hiddenInput');
 
+        //dom 
+        this.messageError = document.getElementById('messageError');
+        this.startInput = document.getElementById('startLocation');
+        this.endInput = document.getElementById('endLocation');
+
         var timerInterval = null;
         const value = 0;
 
 
 
         this.initMap();
-        this.getRunDistance();
+        this.getRunDistance(this.userController.LoginStatus());
         this.start(value);
         this.stop();
+
 
     }
 
 
-    getRunDistance() {
+    displayMessageError(message) {
+        this.messageError.innerHTML = `${message}`;
+    }
+
+
+
+
+
+
+    getRunDistance(username) {
         this.btnSave.addEventListener('click', event => {
             this.time = document.getElementById("timer").innerText;
             this.result = new Date(this.time * 1000).toISOString().substr(11, 8)
+            this.username = username
 
             //duas variaveis que guardam o tempo e a distancia corrida
             console.log("time in timer: ", this.result);
             console.log("distance", this.runDistance.value);
+            console.log("nome", this.username);
 
             //falta enviar nome para meter como key na localStorage, time e distance para ficar na localStorage como value
             // "tiagosantos10" -> ["distance" : "this.runDistance.value" , "time" : "this.result"]
+            this.distanceTime = this.runDistance.value + "*" + this.result;
+            console.log("distanceTime", this.distanceTime);
+
+            try {
+                this.trainingController.addTraining(this.username, this.distanceTime);
+                this.displayMessageError("Training added with success!");
+                this.clearInputs();
+                location.reload();
+            } catch (error) {
+                this.displayMessageError(error)
+            }
+
+
+
 
 
         })
+    }
+
+    clearInputs() {
+        this.startInput.value = "";
+        this.endInput.value = "";
+        this.runDistance.value = "";
     }
 
 
@@ -126,12 +165,6 @@ export default class TrainingView {
         const directionsService = new google.maps.DirectionsService();
         const directionsRenderer = new google.maps.DirectionsRenderer();
 
-        //get the value of the inputs with the streets
-        const StartAddress = document.getElementById('startLocation').value;
-        const EndAddress = document.getElementById('endLocation').value;
-
-
-
         //listener for the button to get the routes
         document.getElementById('btnGetRoutes').addEventListener('click',
             () => geocodeAddress(geocoder, map, directionsService, directionsRenderer)
@@ -139,7 +172,9 @@ export default class TrainingView {
         let training = "";
 
         function geocodeAddress(geocoder, resultsMap, directionsService, directionsRenderer) {
-
+            //get the value of the inputs with the streets
+            const StartAddress = document.getElementById('startLocation').value;
+            const EndAddress = document.getElementById('endLocation').value;
             //put satartLocation on the map with a marker
             geocoder.geocode({ 'address': StartAddress },
                 (results, status) => {
@@ -194,7 +229,7 @@ export default class TrainingView {
                             let contentString = `
                                 <div>
                                     <h4>Informations about the run:</h4>
-                                    <p>The distance of the run you choose is ${directionsData.distance.text}</p>
+                                    <p>Distance of your running: ${directionsData.distance.text}</p>
                                 </div>
                             `;
                             console.log(`The distance is ${directionsData.distance.text} (${directionsData.duration.text})`);

@@ -11,11 +11,26 @@ export default class TeamsInfoView {
         this.teamName = document.querySelector('h2#name');
         this.TeamCamisola = document.querySelector("#camisola")
         this.tblMembers = document.querySelector("#TblMembers")
+        this.btnJoin = document.querySelector("#join")
         this.generateMembers();
         this.fillTeamData();
         this.bindJoinTeam();
 
     }
+    bindJoinTeam() {
+        const currentTeam = this.teamsController.getCurrentTeam()
+        this.btnJoin.addEventListener('click', event => {
+            event.preventDefault()
+            let Nmembros = currentTeam.membros
+            let Ntotal_atletas = currentTeam.total_atletas
+            Nmembros.push(this.userController.LoginStatus())
+            Ntotal_atletas = Nmembros.length;
+            console.log(Nmembros);
+            this.teamsController.updateMembersTotal(currentTeam.id, currentTeam.name, currentTeam.localidade, currentTeam.camisola, Ntotal_atletas, Nmembros, currentTeam.logo, currentTeam.owner);
+        })
+
+    }
+
     generateMembers() {
         const currentTeam = this.teamsController.getCurrentTeam()
         const membros = currentTeam.membros

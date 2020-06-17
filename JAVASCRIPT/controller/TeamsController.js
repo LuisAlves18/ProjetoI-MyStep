@@ -16,6 +16,10 @@ export default class TeamsController {
 
 
     }
+    updateMembersTotal(id, name, localidade, camisola, Ntotal_atletas, Nmembros, logo, owner) {
+        this.teamsModel.updateMembersTotal(id, name, localidade, camisola, Ntotal_atletas, Nmembros, logo, owner);
+    };
+
     setCurrentTeam(id) {
         this.teamsModel.setCurrentTeam(id)
     }
