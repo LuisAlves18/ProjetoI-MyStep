@@ -4,6 +4,14 @@
     background-color: #00cc99;
 }
 
+.remove {
+    border-radius: 28px;
+}
+
+.remove:hover {
+    color: black;
+}
+
 .see:hover {
     background-color: #00cc99;
     color: black;
@@ -12,10 +20,17 @@
 .card {
     margin-top: 3vh;
     border-radius: 17px;
+    width: 300px;
+    margin-right: 200px;
 }
 
 #GoCreate {
     border-radius: 28px;
     background-color: #00cc99;
     margin-top: 3vh;
+}
+
+.img {
+    max-width: 200px;
+    max-height: 200px;
 }

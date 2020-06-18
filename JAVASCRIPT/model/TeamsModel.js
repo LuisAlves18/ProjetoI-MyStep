@@ -36,8 +36,8 @@ export default class teamsModel {
         this.teams.push(team);
         this._persist();
     }
-    remove(team) {
-        this.teams = this.teams.filter(name => team.name != name)
+    remove(name) {
+        this.teams = this.teams.filter(team => team.name != name)
         this._persist()
     }
     setCurrentTeam(id) {

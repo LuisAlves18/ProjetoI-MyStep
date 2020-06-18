@@ -34,7 +34,9 @@ export default class UserController {
         this.userModel.logout();
     }
 
-
+    getUsers() {
+        this.userModel.getAll()
+    }
     LoginStatus() {
         this.loggedUser = document.getElementById('name');
         this.imageUser = document.getElementById('image');

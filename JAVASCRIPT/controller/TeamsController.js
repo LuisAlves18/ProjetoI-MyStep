@@ -16,6 +16,24 @@ export default class TeamsController {
 
 
     }
+
+    getPhoto(teamname) {
+        const teams = this.teamsModel.getAll();
+        for (const team of teams) {
+            if (team.name === teamname) {
+                return team.logo;
+            }
+        }
+    }
+
+    removeTeam(name) {
+        this.teamsModel.remove(name)
+    }
+
+    updatePointsEvents(id, username, name, nPassword, email, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes, pontos, eventsCount, status) {
+
+    }
+
     updateMembersTotal(id, name, localidade, camisola, Ntotal_atletas, Nmembros, logo, owner) {
         this.teamsModel.updateMembersTotal(id, name, localidade, camisola, Ntotal_atletas, Nmembros, logo, owner);
     };

@@ -11,8 +11,10 @@ export default class TeamsView {
 
         this.catalog = document.querySelector("#catalog");
         this.btnCreate = document.querySelector("#GoCreate")
+            /* this.getImage(); */
         this.renderCatalog(this.teamsController.getTeams())
         this.bindGoCreateTeam();
+
     }
     bindGoCreateTeam() {
         this.btnCreate.addEventListener("click", function() {
@@ -27,6 +29,16 @@ export default class TeamsView {
             })
         }
     }
+
+    bindAddRemoveEvent() {
+        for (const btnRemove of document.getElementsByClassName("remove")) {
+            btnRemove.addEventListener('click', event => {
+                this.teamsController.removeTeam(event.target.id)
+                this.renderCatalog(this.teamsController.getTeams())
+            })
+        }
+    }
+
     renderCatalog(teams = []) {
         let result = ''
         let i = 0
@@ -40,22 +52,24 @@ export default class TeamsView {
         this.catalog.innerHTML = result
             //this._renderAddEventButton(this.userController.checkLoginStatus());
 
-        //this.bindAddRemoveEvent()
+        this.bindAddRemoveEvent()
         this.bindAddSeeMoreTeam()
     }
 
     _generateTeamCard(team) {
+        var dataImage = this.teamsController.getPhoto(team.name);
+        this.image = "data:image/png;base64," + dataImage;
         let html = `
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="card">
                 <div class="card-body">
-                <img class="card-img-top" src="${team.logo}" alt="">
+                <img class="card-img-top img" src="${this.image}" alt="">
                     <h4 class="card-title">${team.name}</h4>
                     <button id="${team.id}" class="btn btn-primary see">See more</button>
             `
-            /* if (this.userController.checkLoginStatus()) {
-                html += `<button id="${event.name}" class="btn btn-danger remove">Remove</button>`
-            } */
+        if (sessionStorage.getItem('loggedAdmin') !== null) {
+            html += `<button id="${team.name}" class="btn btn-danger remove">Remove</button>`
+        }
 
         html += `
                 </div>

@@ -57,10 +57,10 @@ export default class TeamsInfoView {
 
     fillTeamData() {
 
-        const currentTeam = this.teamsController.getCurrentTeam()
+        const currentTeam = this.teamsController.getCurrentTeam();
         this.teamName.innerHTML = currentTeam.name;
-        this.teamLogo.src = currentTeam.logo;
-        this.TeamCamisola.src = currentTeam.camisola;
+        this.teamLogo.src = "data:image/png;base64," + currentTeam.logo;
+        this.TeamCamisola.src = "data:image/png;base64," + currentTeam.camisola;
         this.tblMembers.innerHTML = this.generateMembers();
     }
 

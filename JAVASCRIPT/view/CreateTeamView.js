@@ -17,8 +17,10 @@ export default class CreateTeamView {
         this.total_atletas = 1;
         this.owner = this.userController.LoginStatus();
         this.membros = [this.owner];
+        this.shirtImage = document.getElementById('shirtImage');
+        this.logoImage = document.getElementById('logoImage');
         this.bindAddTeam();
-
+        this.showImage();
 
     }
     bindAddTeam() {
@@ -30,9 +32,43 @@ export default class CreateTeamView {
             console.log(this.total_atletas);
             console.log(this.owner);
             console.log(this.owner);
-            this.imgData = this.getBase64Image(this.image)
-            this.userController.uploadPhoto(this.imgData);
-            this.teamsController.createTeam(this.teamName.value, this.teamPlace.value, this.teamShirt.value, this.total_atletas, this.membros, this.teamLogo.value, this.owner)
+            this.imgDataShirt = this.getBase64Image(this.shirtImage)
+            this.imgDataLogo = this.getBase64Image(this.logoImage)
+                //this.userController.uploadPhoto(this.imgData);
+            this.teamsController.createTeam(this.teamName.value, this.teamPlace.value, this.imgDataShirt, this.total_atletas, this.membros, this.imgDataLogo, this.owner)
+        })
+    }
+
+    getBase64Image(img) {
+        var canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        var ctx = canvas.getContext("2d");
+
+
+        /* var image = new Image();
+        image.src = img.src;
+        console.log('img.src ->',img);
+        image.onload = function() {
+            ctx.drawImage(image, 0, 0);
+        } */
+        ctx.drawImage(img, 0, 0);
+
+        var image = canvas.toDataURL("image/png");
+
+        return image.replace(/^data:image\/(png|jpg);base64,/, "");
+    }
+
+    showImage() {
+        this.teamLogo.addEventListener('change', event => {
+            const img = this.teamLogo.files[0];
+            this.logoImage.src = window.URL.createObjectURL(img);
+        })
+
+        this.teamShirt.addEventListener('change', event => {
+            const img2 = this.teamShirt.files[0];
+            this.shirtImage.src = window.URL.createObjectURL(img2);
         })
     }
 

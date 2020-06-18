@@ -38,19 +38,25 @@ class App {
                 UserViewLogout
             ],
             'training': [
-                TrainingView
+                TrainingView,
+                UserViewLogout
             ],
             'events': [
-                EventsView
+                EventsView,
+                UserViewLogout
             ],
             'events-info': [
-                EventsInfoView
+                EventsInfoView,
+                UserViewLogout
             ],
             'teams': [
-                TeamsView
+                TeamsView,
+                UserViewLogout
             ],
             'teams-info': [
-                TeamsInfoView
+                TeamsInfoView,
+                UserViewLogout
+
             ],
             'running-data': [
                 RunningDataView,
@@ -195,7 +201,7 @@ class App {
 
             }
         ];
-        const teams = [{
+        /*const teams = [{
             id: 1,
             name: 'Os reis ',
             localidade: "Porto",
@@ -225,16 +231,16 @@ class App {
             logo: "OUTROS/download.png",
             owner: "luis"
 
-        }]
+        }]*/
         if (!localStorage.users) {
             localStorage.setItem('users', JSON.stringify(users));
         }
         if (!localStorage.events) {
             localStorage.setItem('events', JSON.stringify(events));
         }
-        if (!localStorage.teams) {
+        /*if (!localStorage.teams) {
             localStorage.setItem('teams', JSON.stringify(teams));
-        }
+        }*/
     }
 }
 
