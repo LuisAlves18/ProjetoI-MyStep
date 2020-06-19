@@ -56,6 +56,8 @@ export default class UserController {
     CheckAdminLogin() {
         if (sessionStorage.getItem('loggedAdmin') !== null) {
             return true;
+        } else if (sessionStorage.getItem('loggedUser') !== null) {
+            return false
         }
     }
 

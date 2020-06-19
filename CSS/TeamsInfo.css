@@ -25,3 +25,9 @@
 #TblMembers {
     margin-top: 3vh;
 }
+
+#join {
+    background-color: #00cc99;
+    color: white;
+    border-radius: 28px;
+}

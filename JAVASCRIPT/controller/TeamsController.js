@@ -41,7 +41,16 @@ export default class TeamsController {
     setCurrentTeam(id) {
         this.teamsModel.setCurrentTeam(id)
     }
+
+    setUserTeam(id) {
+        this.teamsModel.setUserTeam(id);
+    }
+
     getCurrentTeam() {
         return this.teamsModel.getCurrentTeam()
+    }
+
+    getUserTeam() {
+        return this.teamsModel.getUserTeam()
     }
 }

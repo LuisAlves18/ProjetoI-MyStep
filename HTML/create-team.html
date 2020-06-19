@@ -17,7 +17,7 @@
     <div class="content-fluid">
         <nav class="navbar navbar-expand-md" id=navbar>
             <!-- Logo -->
-            <a class="navbar-brand" href="HTML/index.html"><img src="OUTROS\LogoW.png" height="40px" alt=""></a>
+            <a class="navbar-brand" href="index.html"><img src="OUTROS\LogoW.png" height="40px" alt=""></a>
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="cNavbar">
                 <ul class="navbar-nav ml-auto" id="navnav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="/index.html">
+                        <a class="nav-link" href="index.html" id="current">
                             Home
                         </a>
                     </li>
@@ -44,7 +44,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="HTML/teams.html">
+                        <a class="nav-link" href="HTML/teams.html" id="teamsPage">
                             Teams
                         </a>
                     </li>
@@ -59,24 +59,24 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Achievements</a>
-                            <a class="dropdown-item" href="#">Statistics</a>
-                            <a class="dropdown-item" href="/HTML/edit.html">Edit Profile</a>
-                            <a class="dropdown-item" href="/HTML/running-data.html">Running Data</a>
-                            <a class="dropdown-item" href="/HTML/equipment-data.html">Equipment Data</a>
+                            <a class="dropdown-item" href="/HTML/achievements.html">Achievements</a>
+                            <a class="dropdown-item" href="/HTML/statistics.html">Statistics</a>
+                            <a class="dropdown-item" href="HTML/edit.html">Edit Profile</a>
+                            <a class="dropdown-item" href="HTML/running-data.html" id="runningData">Running Data</a>
+                            <a class="dropdown-item" href="HTML/equipment-data.html" id="equipmentData">Equipment Data</a>
                             <a class="dropdown-item" href="HTML/manage-users.html" id="manageUsers">Manage Users</a>
                             <a class="dropdown-item" href="HTML/manage-events.html" id="manageEvents">Manage Events</a>
                             <a class="dropdown-item" href="HTML/manage-teams.html" id="manageTeams">Manage Teams</a>
+                            <a class="dropdown-item" href="HTML/teams-info.html" id="myTeam">My Team</a>
                             <button class="dropdown-item" id="logout" type="button">Log out</button>
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
-
         <!--Resto do body-->
         <div class="row justify-content-center">
-            <div class="col-5" id="box">
+            <div class="col-sm-8 col-md7 col-lg-5" id="box">
                 <div class="row justify-content-center" id="header">
                     <div class="col-12 text-center">
                         <h3>Create Team </h3>

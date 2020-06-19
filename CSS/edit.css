@@ -1,36 +1,10 @@
-body {
-    height: 100%;
-    overflow: hidden;
-    padding: 0;
-}
-
-#Background {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#HeadReg img {
-    height: auto;
-    width: 30vh;
-}
-
-#HeadReg {
-    background-color: #484848;
-    border-radius: 17px;
-}
-
-#logo {
-    margin-left: 6vh;
-}
+/*
 
 #RegBox {
     border-radius: 17px;
     background: rgba(0, 0, 0, 0.5);
     position: absolute;
-    /* or absolute */
+     
     top: 20%;
     left: 25%;
 }
@@ -116,3 +90,41 @@ body {
 }
 
 #profilePicture {}
+*/
+
+#RegBox {
+    margin-top: 5vh;
+    background-color: #707070;
+    border-radius: 28px;
+    ;
+}
+
+#HeadReg {
+    color: #00cc99;
+    border-radius: 28px;
+    background-color: #484848;
+}
+
+#txtName,
+#txtUsername,
+#txtEmail,
+#txtPassword,
+#txtConfPassword {
+    border-radius: 28px;
+}
+
+#btnUpdatePassowrd,
+#btnUpdateEmail {
+    margin-top: 2vh;
+    visibility: hidden;
+}
+
+.btnChanges {
+    margin-top: 2vh;
+    border-radius: 28px;
+    background-color: #00cc99;
+}
+
+#errorMessageRegister {
+    color: yellow;
+}

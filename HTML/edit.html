@@ -16,7 +16,7 @@
     <div class="content-fluid">
         <nav class="navbar navbar-expand-md" id=navbar>
             <!-- Logo -->
-            <a class="navbar-brand" href="HTML/index.html"><img src="OUTROS\LogoW.png" height="40px" alt=""></a>
+            <a class="navbar-brand" href="index.html"><img src="OUTROS\LogoW.png" height="40px" alt=""></a>
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="cNavbar">
                 <ul class="navbar-nav ml-auto" id="navnav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="#" id="current">
+                        <a class="nav-link" href="index.html" id="current">
                             Home
                         </a>
                     </li>
@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="HTML/teams.html">
+                        <a class="nav-link" href="HTML/teams.html" id="teamsPage">
                             Teams
                         </a>
                     </li>
@@ -58,11 +58,15 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Achievements</a>
-                            <a class="dropdown-item" href="#">Statistics</a>
-                            <a class="dropdown-item" href="/HTML/edit.html">Edit Profile</a>
-                            <a class="dropdown-item" href="#">Running Data</a>
-                            <a class="dropdown-item" href="#">Equipment Data</a>
+                            <a class="dropdown-item" href="/HTML/achievements.html">Achievements</a>
+                            <a class="dropdown-item" href="/HTML/statistics.html">Statistics</a>
+                            <a class="dropdown-item" href="HTML/edit.html">Edit Profile</a>
+                            <a class="dropdown-item" href="HTML/running-data.html" id="runningData">Running Data</a>
+                            <a class="dropdown-item" href="HTML/equipment-data.html" id="equipmentData">Equipment Data</a>
+                            <a class="dropdown-item" href="HTML/manage-users.html" id="manageUsers">Manage Users</a>
+                            <a class="dropdown-item" href="HTML/manage-events.html" id="manageEvents">Manage Events</a>
+                            <a class="dropdown-item" href="HTML/manage-teams.html" id="manageTeams">Manage Teams</a>
+                            <a class="dropdown-item" href="HTML/teams-info.html" id="myTeam">My Team</a>
                             <button class="dropdown-item" id="logout" type="button">Log out</button>
                         </div>
                     </li>
@@ -72,94 +76,95 @@
 
 
         <div class="row justify-content-center">
-            <div id="RegBox" class="col-6 justify-content-center">
+            <div id="RegBox" class="col-sm-8 col-lg-10 justify-content-center">
                 <div class="row justify-content-center" id="HeadReg">
                     <h2>Personal Area</h2>
                 </div>
-                <div class="left-side">
-                    <div id="container-photo">
-                        <form id="frmUpdatePhoto">
-                            <p>Edit your photo:</p>
+                <div class="row justify-content-center">
+                    <div class="col-7">
+                        <div id="container-photo">
+                            <form id="frmUpdatePhoto">
+                                <p>Edit your photo:</p>
 
-                            <div class="row justify-content-center photo">
-                                <img src="" id="profilePicture" alt="Foto de Perfil">
-                            </div>
+                                <div class="row justify-content-center photo">
+                                    <img src="" id="profilePicture" alt="Foto de Perfil">
+                                </div>
 
-                            <input type="file" id="btnOpenFile" class="btn btn-outline-light btnChanges" required>
-                            <button class="btn btn-outline-light btnChanges" id="btnChangePhoto" type="submit">
+                                <input type="file" id="btnOpenFile" class="btn btn-outline-light btnChanges" required><br>
+                                <button class="btn btn-outline-light btnChanges" id="btnChangePhoto" type="submit">
                                 Edit Photo
                             </button>
-                        </form>
+                            </form>
+                        </div>
+
                     </div>
 
-                </div>
+                    <div class="col-5">
+                        <div id="container-form">
+                            <form id="frmUpdateEmail">
 
-                <div class="right-side">
-                    <div id="container-form">
-                        <form id="frmUpdateEmail">
+                                <label for="txtEmail">Email: </label>
+                                <div class="form-row justify-content-center">
+                                    <div class="col-12">
+                                        <input type="email" class="form-control form-control" id="txtEmail" value="email do user" readonly="true" required>
+                                    </div>
 
-                            <label for="txtEmail">Email: </label>
-                            <div class="form-row justify-content-center">
-                                <div class="col-12">
-                                    <input type="email" class="form-control form-control" id="txtEmail" value="email do user" readonly="true" required>
                                 </div>
-
-                            </div>
-                            <div class="form-row justify-content-left">
-                                <div class="col-3">
-                                    <button class="btn btn-outline-light btnChanges" id="btnChangeEmail" type="button">
+                                <div class="form-row justify-content-center">
+                                    <div class="col-4">
+                                        <button class="btn btn-outline-light btnChanges" id="btnChangeEmail" type="button">
                                         Make Changes
                                     </button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn btn-outline-light btnChanges" id="btnUpdateEmail" type="submit">
-                                        Update Email
-                                    </button>
-                                </div>
-                            </div>
-
-
-                        </form>
-                        <form id="frmUpdatePassword">
-
-                            <div id="container-password">
-                                <label for="txtPassword">Password: </label>
-                                <div class="form-row justify-content-center">
-                                    <div class="col-12">
-                                        <input type="password" class="form-control form-control" id="txtPassword" placeholder="Change your Password" readonly="true" required>
-                                    </div>
-
-                                </div>
-
-                                <label for="txtConfPassword">Confirm Password: </label>
-                                <div class="form-row justify-content-center">
-                                    <div class="col-12">
-                                        <input type="password" class="form-control form-control" id="txtConfPassword" placeholder="Confirm your new Password" readonly="true" required>
-                                    </div>
-
-                                </div>
-
-                                <div class="form-row justify-content-left">
-                                    <div class="col-3">
-                                        <button class="btn btn-outline-light btnChanges" id="btnChangePassowrd" type="submit">
-                                            Make Changes
-                                        </button>
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-outline-light btnChanges" id="btnUpdatePassowrd" type="submit">
-                                            Update Password
-                                        </button>
+                                        <button class="btn btn-outline-light btnChanges" id="btnUpdateEmail" type="submit">
+                                        Update Email
+                                    </button>
                                     </div>
                                 </div>
 
-                                <div class="form-row justify-content-left">
-                                    <p id="passwordErrorMessage" style="color: yellow;"></p>
+
+                            </form>
+                            <form id="frmUpdatePassword">
+
+                                <div id="container-password">
+                                    <label for="txtPassword">Password: </label>
+                                    <div class="form-row justify-content-center">
+                                        <div class="col-12">
+                                            <input type="password" class="form-control form-control" id="txtPassword" placeholder="Change your Password" readonly="true" required>
+                                        </div>
+
+                                    </div>
+
+                                    <label for="txtConfPassword">Confirm Password: </label>
+                                    <div class="form-row justify-content-center">
+                                        <div class="col-12">
+                                            <input type="password" class="form-control form-control" id="txtConfPassword" placeholder="Confirm your new Password" readonly="true" required>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row justify-content-center">
+                                        <div class="col-4">
+                                            <button class="btn btn-outline-light btnChanges" id="btnChangePassowrd" type="submit">
+                                            Make Changes
+                                        </button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-outline-light btnChanges" id="btnUpdatePassowrd" type="submit">
+                                            Update Password
+                                        </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row justify-content-left">
+                                        <p id="passwordErrorMessage" style="color: yellow;"></p>
+                                    </div>
                                 </div>
-                            </div>
 
 
-                        </form>
-
+                            </form>
+                        </div>
 
                     </div>
                 </div>

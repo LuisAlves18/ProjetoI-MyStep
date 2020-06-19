@@ -12,11 +12,29 @@ export default class TeamsInfoView {
         this.TeamCamisola = document.querySelector("#camisola")
         this.tblMembers = document.querySelector("#TblMembers")
         this.btnJoin = document.querySelector("#join")
+        this.btnLeaveTeam = document.getElementById('leaveTeam');
+        this.buttonJoinDisplay();
         this.generateMembers();
         this.fillTeamData();
         this.bindJoinTeam();
 
     }
+
+    buttonJoinDisplay() {
+        const currentTeam = this.teamsController.getCurrentTeam()
+        this.currentUser = this.userController.LoginStatus();
+        let members = currentTeam.membros;
+        for (let i = 0; i < members.length; i++) {
+            if (members[i] === this.currentUser) {
+                //console.log("entrou no if")
+                this.btnJoin.style.display = "none";
+                return true
+            }
+
+        }
+        this.btnLeaveTeam.style.display = "none";
+    }
+
     bindJoinTeam() {
         const currentTeam = this.teamsController.getCurrentTeam()
         this.btnJoin.addEventListener('click', event => {
@@ -29,6 +47,12 @@ export default class TeamsInfoView {
             this.teamsController.updateMembersTotal(currentTeam.id, currentTeam.name, currentTeam.localidade, currentTeam.camisola, Ntotal_atletas, Nmembros, currentTeam.logo, currentTeam.owner);
         })
 
+    }
+
+    bindLeaveTeam() {
+        const currentTeam = this.teamsController.getUserTeam()
+
+        this
     }
 
     generateMembers() {
@@ -56,12 +80,20 @@ export default class TeamsInfoView {
     }
 
     fillTeamData() {
+        if (this.teamsController.getUserTeam() === null) {
+            const currentTeam = this.teamsController.getCurrentTeam();
+            this.teamName.innerHTML = currentTeam.name;
+            this.teamLogo.src = "data:image/png;base64," + currentTeam.logo;
+            this.TeamCamisola.src = "data:image/png;base64," + currentTeam.camisola;
+            this.tblMembers.innerHTML = this.generateMembers();
+        } else {
+            const currentTeam = this.teamsController.getUserTeam();
+            this.teamName.innerHTML = currentTeam.name;
+            this.teamLogo.src = "data:image/png;base64," + currentTeam.logo;
+            this.TeamCamisola.src = "data:image/png;base64," + currentTeam.camisola;
+            this.tblMembers.innerHTML = this.generateMembers();
+        }
 
-        const currentTeam = this.teamsController.getCurrentTeam();
-        this.teamName.innerHTML = currentTeam.name;
-        this.teamLogo.src = "data:image/png;base64," + currentTeam.logo;
-        this.TeamCamisola.src = "data:image/png;base64," + currentTeam.camisola;
-        this.tblMembers.innerHTML = this.generateMembers();
     }
 
 

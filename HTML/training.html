@@ -15,54 +15,59 @@
 
 <body>
     <div class="content-fluid">
-        <nav class="navbar navbar-expand-md  " id=navbar>
+        <nav class="navbar navbar-expand-md" id=navbar>
             <!-- Logo -->
-            <a class="navbar-brand" href="HTML/index.html"><img src="OUTROS\LogoW.png" height="40px" alt=""></a>
+            <a class="navbar-brand" href="index.html"><img src="OUTROS\LogoW.png" height="40px" alt=""></a>
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cNavbar">
-                <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="cNavbar">
                 <ul class="navbar-nav ml-auto" id="navnav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="/index.html">
+                        <a class="nav-link" href="index.html" id="current">
                             Home
                         </a>
                     </li>
 
 
                     <li class="nav-item ">
-                        <a class="nav-link" href="/HTML/training.html" id="current">
+                        <a class="nav-link" href="HTML/training.html">
                             Training
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/HTML/events.html">
+                        <a class="nav-link" href="HTML/events.html">
                             Events
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/HTML/teams.html">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="HTML/teams.html" id="teamsPage">
                             Teams
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/HTML/about-us.html">
+                        <a class="nav-link" href="#">
                             About Us
                         </a>
                     </li>
                     <li class="nav-item dropdown " id="dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span id="name">username</span> <img src="OUTROS/download.png" height="30px">
+                            <span id="name">username </span><img src="OUTROS/download.png" height="30px">
                         </a>
+
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/HTML/achievements.html">Achievements</a>
                             <a class="dropdown-item" href="/HTML/statistics.html">Statistics</a>
-                            <a class="dropdown-item" href="/HTML/edit-profile.html">Edit Profile</a>
-                            <a class="dropdown-item" href="/HTML/running-data.html">Running Data</a>
-                            <a class="dropdown-item" href="/HTML/equipment-data.html">Equipment Data</a>
+                            <a class="dropdown-item" href="HTML/edit.html">Edit Profile</a>
+                            <a class="dropdown-item" href="HTML/running-data.html" id="runningData">Running Data</a>
+                            <a class="dropdown-item" href="HTML/equipment-data.html" id="equipmentData">Equipment Data</a>
+                            <a class="dropdown-item" href="HTML/manage-users.html" id="manageUsers">Manage Users</a>
+                            <a class="dropdown-item" href="HTML/manage-events.html" id="manageEvents">Manage Events</a>
+                            <a class="dropdown-item" href="HTML/manage-teams.html" id="manageTeams">Manage Teams</a>
+                            <a class="dropdown-item" href="HTML/teams-info.html" id="myTeam">My Team</a>
                             <button class="dropdown-item" id="logout" type="button">Log out</button>
                         </div>
                     </li>

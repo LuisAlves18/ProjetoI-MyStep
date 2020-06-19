@@ -1,9 +1,11 @@
 import UserController from '../controller/UserController.js'
+import TeamsController from '../controller/TeamsController.js';
 
 export default class UserViewLogout {
     constructor() {
 
         this.userController = new UserController();
+        this.teamsController = new TeamsController();
         this.userController.LoginStatus();
 
         this.logoutButton = document.getElementById('logout');
@@ -15,8 +17,11 @@ export default class UserViewLogout {
         this.manageUsers = document.getElementById('manageUsers');
         this.manageEvents = document.getElementById('manageEvents');
         this.manageTeams = document.getElementById('manageTeams');
+        this.myTeam = document.getElementById('myTeam');
+        this.teamsPage = document.getElementById('teamsPage');
 
         //this.userController.personLogged();
+        this.checkTeam(this.teamsController.getTeams())
         this.bindAddLogoutEvent();
         this.displayAdmin();
 
@@ -32,7 +37,7 @@ export default class UserViewLogout {
     }
 
     displayAdmin() {
-        if (this.userController.CheckAdminLogin()) {
+        if (this.userController.CheckAdminLogin() == true) {
             this.runningDataDisplay.style.display = "none";
             this.equipmentDataDisplay.style.display = "none";
         } else {
@@ -42,12 +47,22 @@ export default class UserViewLogout {
         }
     }
 
+    checkTeam(teams = []) {
+        this.currentUser = this.userController.LoginStatus();
+        for (const team of teams) {
+            this.members = team.membros;
+            for (let i = 0; i < this.members.length; i++) {
+                if (this.members[i] === this.currentUser) {
+                    this.userTeam = team.id;
+                    this.teamsController.setUserTeam(team.id);
+                    this.teamsPage.style.display = "none";
+                    return true;
+                }
+            }
+        }
 
-
-
-
-
-
+        this.myTeam.style.display = "none";
+    }
 
 
 

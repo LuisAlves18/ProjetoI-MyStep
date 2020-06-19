@@ -43,8 +43,15 @@ export default class teamsModel {
     setCurrentTeam(id) {
         localStorage.setItem("current_team", id);
     }
+
+    setUserTeam(id) {
+        localStorage.setItem("user_team", id);
+    }
     getCurrentTeam() {
         return this.teams.find(team => team.id === +localStorage.current_team)
+    }
+    getUserTeam() {
+        return this.teams.find(team => team.id === +localStorage.user_team)
     }
     _persist() {
         localStorage.setItem('teams', JSON.stringify(this.teams));

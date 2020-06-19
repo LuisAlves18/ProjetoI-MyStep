@@ -10,14 +10,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="CSS/runningData.css">
+    <link rel="stylesheet" href="CSS/equipmentData.css">
 </head>
 
 <body>
     <div class="content-fluid">
         <nav class="navbar navbar-expand-md" id=navbar>
             <!-- Logo -->
-            <a class="navbar-brand" href="HTML/index.html"><img src="OUTROS\LogoW.png" height="40px" alt=""></a>
+            <a class="navbar-brand" href="index.html"><img src="OUTROS\LogoW.png" height="40px" alt=""></a>
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="cNavbar">
                 <ul class="navbar-nav ml-auto" id="navnav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="/index.html">
+                        <a class="nav-link" href="index.html" id="current">
                             Home
                         </a>
                     </li>
@@ -44,7 +44,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="HTML/teams.html">
+                        <a class="nav-link" href="HTML/teams.html" id="teamsPage">
                             Teams
                         </a>
                     </li>
@@ -59,11 +59,15 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Achievements</a>
-                            <a class="dropdown-item" href="#">Statistics</a>
-                            <a class="dropdown-item" href="/HTML/edit.html">Edit Profile</a>
-                            <a class="dropdown-item" href="/HTML/running-data.html">Running Data</a>
-                            <a class="dropdown-item" href="/HTML/equipment-data.html">Equipment Data</a>
+                            <a class="dropdown-item" href="/HTML/achievements.html">Achievements</a>
+                            <a class="dropdown-item" href="/HTML/statistics.html">Statistics</a>
+                            <a class="dropdown-item" href="HTML/edit.html">Edit Profile</a>
+                            <a class="dropdown-item" href="HTML/running-data.html" id="runningData">Running Data</a>
+                            <a class="dropdown-item" href="HTML/equipment-data.html" id="equipmentData">Equipment Data</a>
+                            <a class="dropdown-item" href="HTML/manage-users.html" id="manageUsers">Manage Users</a>
+                            <a class="dropdown-item" href="HTML/manage-events.html" id="manageEvents">Manage Events</a>
+                            <a class="dropdown-item" href="HTML/manage-teams.html" id="manageTeams">Manage Teams</a>
+                            <a class="dropdown-item" href="HTML/teams-info.html" id="myTeam">My Team</a>
                             <button class="dropdown-item" id="logout" type="button">Log out</button>
                         </div>
                     </li>
@@ -72,7 +76,6 @@
         </nav>
 
         <!--Resto do body-->
-
         <div class="row justify-content-center">
 
 
@@ -106,13 +109,13 @@
                             </div>
                         </div>
                         <div class="form-row  justify-content-center">
-                            <div class="col-4">
+                            <div class="col-sm-12 col-lg-4">
                                 <span>Pronation</span><input type="checkbox" name="pronation" id="pronationCheckBox" disabled="true">
                             </div>
-                            <div class="col-4">
+                            <div class="col-sm-12 col-lg-4">
                                 <span>Suspination</span><input type="checkbox" name="suspination" id="suspinationCheckBox" disabled="true">
                             </div>
-                            <div class="col-4">
+                            <div class="col-sm-12 col-lg-4">
                                 <span>Neutral</span><input type="checkbox" name="neutral" id="neutralCheckBox" disabled="true">
                             </div>
                         </div>
@@ -124,16 +127,16 @@
                             </div>
                         </div>
                         <div class="form-row  justify-content-center">
-                            <div class="col-3">
+                            <div class="col-sm-12 col-lg-3">
                                 <span>5km</span><input type="checkbox" name="fivekm" id="fivekmCheckBox" disabled="true">
                             </div>
-                            <div class="col-3">
+                            <div class="col-sm-12 col-lg-3">
                                 <span>10km</span><input type="checkbox" name="tenkm" id="tenkmCheckBox" disabled="true">
                             </div>
-                            <div class="col-3">
+                            <div class="col-sm-12 col-lg-3">
                                 <span>21km</span><input type="checkbox" name="twentyOnekm" id="twentyOnekmCheckBox" disabled="true">
                             </div>
-                            <div class="col-3">
+                            <div class="col-sm-12 col-lg-3">
                                 <span>42km</span><input type="checkbox" name="fourtyTwokm" id="fourtyTwokmCheckBox" disabled="true">
                             </div>
                         </div>
@@ -145,7 +148,7 @@
                             </div>
                         </div>
                         <div class="form-row  justify-content-center">
-                            <div class="col-6">
+                            <div class="col-sm-12 col-lg-6">
                                 <span>Run</span><input type="checkbox" name="run" id="runCheckBox" disabled="true">
                             </div>
                             <div class="col-6">

@@ -18,12 +18,32 @@ export default class EventsInfoView {
         this.eventCap = document.querySelector("#cap");
         this.eventType_dist = document.querySelector("#type_dist")
         this.btnjoin = document.querySelector("#join")
+        this.joinedMessage = document.getElementById('JoinedMessage');
+
+        this.buttonJoinDisplay();
         this.generateType_dist();
         this.bindJoinRace();
         this.fillEventData();
 
 
+
     }
+
+
+    buttonJoinDisplay() {
+        const currentEvent = this.eventsController.getCurrentEvent();
+        this.currentUser = this.userController.LoginStatus();
+        let membros = currentEvent.participantes;
+        for (let i = 0; i < membros.length; i++) {
+            if (membros[i] === this.currentUser) {
+                //console.log("entrou no if");
+                this.btnjoin.style.display = "none"
+                this.joinedMessage.innerHTML = "You are already in this event! Good Luck!"
+            }
+
+        }
+    }
+
     bindJoinRace() {
         const currentEvent = this.eventsController.getCurrentEvent()
         this.btnjoin.addEventListener('click', event => {
@@ -33,7 +53,7 @@ export default class EventsInfoView {
             let Nocupacao = currentEvent.ocupacao
             membros.push(this.userController.LoginStatus())
             Nocupacao = membros.length + 1;
-            this.currentUser = this.userController.LoginStatus();
+            /* this.currentUser = this.userController.LoginStatus();
             this.users = this.userController.getUsers()
             for (const user of users) {
                 if (this.currentUser === user.username) {
@@ -42,8 +62,8 @@ export default class EventsInfoView {
             }
             this.points = +13;
             console.log(currentEvent.participantes);
-
-            this.eventsController.updateMembersOcupation(currentEvent.id, currentEvent.name, currentEvent.edicao, currentEvent.localidade, currentEvent.poster, currentEvent.tshirt, currentEvent.medalha, currentEvent.descricao, currentEvent.data_hora, currentEvent.tipos, currentEvent.distancias, currentEvent.capacidade, Nocupacao, currentEvent.preco, membros);
+            */
+            this.eventsController.updateMembersOcupation(currentEvent.id, currentEvent.name, currentEvent.edicao, currentEvent.localidade, currentEvent.poster, currentEvent.tshirt, currentEvent.medalha, currentEvent.descricao, currentEvent.data_hora, currentEvent.tipos, currentEvent.distancias, currentEvent.capacidade, currentEvent.ocupacao, currentEvent.preco, membros);
         })
 
     }
