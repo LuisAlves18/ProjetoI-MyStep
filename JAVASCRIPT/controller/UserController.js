@@ -174,6 +174,10 @@ export default class UserController {
         }
     }
 
+    updatePoints(id, username, fullname, password, email, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes, pontos, eventsCount, status) {
+        this.userModel.updatePointsEvents(id, username, fullname, password, email, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes, pontos, eventsCount, status);
+    }
+
 
 
 

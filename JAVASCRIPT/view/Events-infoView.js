@@ -42,6 +42,10 @@ export default class EventsInfoView {
             }
 
         }
+        if (currentEvent.ocupacao === currentEvent.capacidade) {
+            this.btnjoin.style.display = "none"
+            this.joinedMessage.innerHTML = "This event is full! Try another one!"
+        }
     }
 
     bindJoinRace() {
@@ -52,8 +56,8 @@ export default class EventsInfoView {
 
             let Nocupacao = currentEvent.ocupacao
             membros.push(this.userController.LoginStatus())
-            Nocupacao = membros.length + 1;
-            /* this.currentUser = this.userController.LoginStatus();
+            Nocupacao = membros.length;
+            /* 
             this.users = this.userController.getUsers()
             for (const user of users) {
                 if (this.currentUser === user.username) {
@@ -63,7 +67,22 @@ export default class EventsInfoView {
             this.points = +13;
             console.log(currentEvent.participantes);
             */
-            this.eventsController.updateMembersOcupation(currentEvent.id, currentEvent.name, currentEvent.edicao, currentEvent.localidade, currentEvent.poster, currentEvent.tshirt, currentEvent.medalha, currentEvent.descricao, currentEvent.data_hora, currentEvent.tipos, currentEvent.distancias, currentEvent.capacidade, currentEvent.ocupacao, currentEvent.preco, membros);
+
+            this.currentUser = this.userController.LoginStatus();
+            const users = this.userController.getUsers();
+            for (const user of users) {
+                if (user.username === this.currentUser) {
+                    this.pontos = user.pontos
+                    this.eventsCount = user.eventsCount;
+                    this.pontos += 13;
+                    this.eventsCount += 1;
+                    this.userController.updatePoints(user.id, user.username, user.fullname, user.password, user.email, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, this.pontos, this.eventsCount, user.status);
+                }
+
+            }
+
+            this.eventsController.updateMembersOcupation(currentEvent.id, currentEvent.name, currentEvent.edicao, currentEvent.localidade, currentEvent.poster, currentEvent.tshirt, currentEvent.descricao, currentEvent.data_hora, currentEvent.tipos, currentEvent.distancias, currentEvent.capacidade, Nocupacao, currentEvent.preco, membros);
+            location.reload();
         })
 
     }

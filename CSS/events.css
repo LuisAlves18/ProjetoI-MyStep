@@ -34,3 +34,24 @@
     margin-top: 3vh;
     border-radius: 17px;
 }
+
+.remove {
+    border-radius: 28px;
+}
+
+#imgPoster,
+#imgTshirt {
+    display: none;
+}
+
+.edit {
+    border-radius: 28px;
+    color: black;
+    background-color: white;
+}
+
+.edit:hover {
+    border-radius: 28px;
+    background-color: #00cc99;
+    color: black;
+}

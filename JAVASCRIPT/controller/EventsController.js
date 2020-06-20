@@ -3,9 +3,9 @@ export default class EventsController {
     constructor() {
         this.eventsModel = new EventsModel();
     }
-    createEvent(name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distancias, capacidade, ocupacao, percurso, preco, membros) {
-        if (!this.EventModel.getAll().some(event => team.event === event)) {
-            this.teamsEvent.create(name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distancias, capacidade, ocupacao, percurso, preco, membros);
+    createEvent(name, edicao, localidade, poster, tshirt, descricao, data_hora, tipos, distancias, capacidade, ocupacao, preco, participantes) {
+        if (!this.eventsModel.getAll().some(event => event.name === name)) {
+            this.eventsModel.create(name, edicao, localidade, poster, tshirt, descricao, data_hora, tipos, distancias, capacidade, ocupacao, preco, participantes);
         } else {
             throw Error(`The Event with the name "${name}" already exists!`);
         }
@@ -17,12 +17,14 @@ export default class EventsController {
             return events;
         }
         return events;
-
-
-
     }
-    updateMembersOcupation(id, name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distancias, capacidade, Nocupacao, preco, membros) {
-        this.eventsModel.updateMembersOcupation(id, name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distancias, capacidade, Nocupacao, preco, membros);
+
+    removeEvent(name) {
+        this.eventsModel.remove(name)
+    }
+
+    updateMembersOcupation(id, name, edicao, localidade, poster, tshirt, descricao, data_hora, tipos, distancias, capacidade, Nocupacao, preco, membros) {
+        this.eventsModel.updateMembersOcupation(id, name, edicao, localidade, poster, tshirt, descricao, data_hora, tipos, distancias, capacidade, Nocupacao, preco, membros);
 
     }
     setCurrentEvent(id) {
@@ -31,5 +33,14 @@ export default class EventsController {
 
     getCurrentEvent() {
         return this.eventsModel.getCurrentEvent()
+    }
+
+    getPhoto(eventname) {
+        const events = this.eventsModel.getAll();
+        for (const event of events) {
+            if (event.name === eventname) {
+                return event.poster;
+            }
+        }
     }
 }

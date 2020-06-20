@@ -6,7 +6,7 @@ export default class eventModel {
     getAll() {
         return this.events;
     }
-    create(name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distacias, capacidade, ocupacao, percurso, preco, participantes) {
+    create(name, edicao, localidade, poster, tshirt, descricao, data_hora, tipos, distancias, capacidade, ocupacao, preco, participantes) {
         const event = {
             id: this.events.length > 0 ? this.events[this.events.length - 1].id + 1 : 1,
             name: name,
@@ -14,7 +14,6 @@ export default class eventModel {
             localidade: localidade,
             poster: poster,
             tshirt: tshirt,
-            medalha: medalha,
             descricao: descricao,
             data_hora: data_hora,
             tipos: tipos,
@@ -27,8 +26,8 @@ export default class eventModel {
         this.events.push(event);
         this._persist();
     }
-    remove(event) {
-        this.events = this.events.filter(name => event.name != name)
+    remove(name) {
+        this.events = this.events.filter(event => event.name != name)
         this._persist()
     }
     setCurrentEvent(id) {
@@ -40,7 +39,7 @@ export default class eventModel {
     _persist() {
         localStorage.setItem('events', JSON.stringify(this.events));
     }
-    updateMembersOcupation(id, name, edicao, localidade, poster, tshirt, medalha, descricao, data_hora, tipos, distancias, capacidade, Nocupacao, preco, membros) {
+    updateMembersOcupation(id, name, edicao, localidade, poster, tshirt, descricao, data_hora, tipos, distancias, capacidade, Nocupacao, preco, membros) {
         this.events = this.events.filter(event => event.name != name)
         this._persist();
         const event = {
@@ -50,7 +49,6 @@ export default class eventModel {
             localidade: localidade,
             poster: poster,
             tshirt: tshirt,
-            medalha: medalha,
             descricao: descricao,
             data_hora: data_hora,
             tipos: tipos,

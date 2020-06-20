@@ -12,6 +12,7 @@ import EquipmentDataView from './view/EquipmentDataView.js'
 import TeamsInfoView from './view/TeamsInfoView.js'
 import CreateTeamView from './view/CreateTeamView.js'
 import AdminView from './view/AdminView.js'
+import RankingView from './view/RankingView.js'
 
 
 
@@ -81,6 +82,9 @@ class App {
             'manage-events': [
                 UserViewLogout,
                 AdminView
+            ],
+            'achievements': [
+                RankingView
             ]
 
 
@@ -133,54 +137,51 @@ class App {
         const events = [{
                 id: 1,
                 name: 'Walk For Health',
-                edicao: '1',
+                edicao: 1,
                 localidade: 'matosas',
                 poster: 'OUTROS/download.png',
                 tshirt: '',
-                medalha: 'medalha',
                 descricao: 'a melhor prova para ficar em forma',
-                data_hora: '29 de junho 17h',
+                data_hora: '29 de junho, 17h',
                 tipos: ['walk'],
-                distancias: ['10K', '21k'],
-                capacidade: '3500',
-                ocupacao: '100',
-                preco: ['10'],
+                distancias: ['10K', '21K'],
+                capacidade: 300,
+                ocupacao: 0,
+                preco: 10,
                 participantes: []
 
             },
             {
                 id: 2,
                 name: 'Healhty People',
-                edicao: '1',
+                edicao: 1,
                 localidade: 'matosas',
                 poster: 'OUTROS/download.png',
                 tshirt: '',
-                medalha: 'medalha',
                 descricao: 'a melhor prova para perder peso',
                 data_hora: '29 de junho, 17h',
                 tipos: ['run', 'walk'],
                 distancias: ['10K'],
-                capacidade: '3500',
-                ocupacao: '100',
-                preco: ['10'],
+                capacidade: 250,
+                ocupacao: 0,
+                preco: 10,
                 participantes: []
 
             },
             {
                 id: 3,
                 name: 'Run Speedsters',
-                edicao: '1',
+                edicao: 1,
                 localidade: 'matosas',
                 poster: 'OUTROS/download.png',
                 tshirt: '',
-                medalha: 'medalha',
                 descricao: 'a prova mais rápida de matosas',
-                data_hora: '29 de junho 17h',
+                data_hora: '29 de junho, 17h',
                 tipos: ['run'],
-                distancias: ['10K', '21k'],
-                capacidade: '3500',
-                ocupacao: '100',
-                preco: ['10'],
+                distancias: ['10K', '21K'],
+                capacidade: 100,
+                ocupacao: 0,
+                preco: 15,
                 participantes: []
             }, {
                 id: 4,
@@ -189,14 +190,13 @@ class App {
                 localidade: 'matosas',
                 poster: 'OUTROS/download.png',
                 tshirt: '',
-                medalha: 'medalha',
                 descricao: 'a prova ideal para amantes de corrida',
-                data_hora: '29 de junho 17h',
+                data_hora: '29 de junho, 17h',
                 tipos: ['run'],
-                distancias: ['10K', '21k'],
-                capacidade: '3500',
-                ocupacao: '100',
-                preco: ['10'],
+                distancias: ['10K', '21K'],
+                capacidade: 100,
+                ocupacao: 100,
+                preco: 5,
                 participantes: []
 
             }
