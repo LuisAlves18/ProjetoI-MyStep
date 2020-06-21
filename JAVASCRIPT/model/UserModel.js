@@ -65,6 +65,35 @@ export default class userModel {
     _persist() {
         localStorage.setItem('users', JSON.stringify(this.users));
     }
+
+
+    updateSettings(id, username, name, nPassword, nemail, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes, Pontos, EventsCount, status) {
+        this.users = this.users.filter(user => user.username != username)
+        this._persist();
+        const user = {
+            id: id,
+            username: username,
+            fullname: name,
+            password: nPassword,
+            email: nemail,
+            birth: birth,
+            image: image,
+            admin: admin,
+            stride: stride,
+            distance: distance,
+            eventType: eventType,
+            shirt: shirt,
+            shorts: shorts,
+            shoes: shoes,
+            pontos: Pontos,
+            eventsCount: EventsCount,
+            status: status
+        }
+        this.users.push(user);
+        this._persist();
+    }
+
+
     updatePointsEvents(id, username, name, Password, email, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes, nPontos, nEventsCount, status) {
         this.users = this.users.filter(user => user.username != username)
         this._persist();
@@ -90,57 +119,7 @@ export default class userModel {
         this.users.push(user);
         this._persist();
     }
-    updatePassword(id, username, name, nPassword, email, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes, pontos, eventsCount, status) {
-        this.users = this.users.filter(user => user.username != username)
-        this._persist();
-        const user = {
-            id: id,
-            username: username,
-            fullname: name,
-            password: nPassword,
-            email: email,
-            birth: birth,
-            image: image,
-            admin: admin,
-            stride: stride,
-            distance: distance,
-            eventType: eventType,
-            shirt: shirt,
-            shorts: shorts,
-            shoes: shoes,
-            pontos: pontos,
-            eventsCount: eventsCount,
-            status: status
-        }
-        this.users.push(user);
-        this._persist();
-    }
 
-    updateEmail(id, username, name, password, nEmail, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes, pontos, eventsCount, status) {
-        this.users = this.users.filter(user => user.username != username)
-        this._persist();
-        const user = {
-            id: id,
-            username: username,
-            fullname: name,
-            password: password,
-            email: nEmail,
-            birth: birth,
-            image: image,
-            admin: admin,
-            stride: stride,
-            distance: distance,
-            eventType: eventType,
-            shirt: shirt,
-            shorts: shorts,
-            shoes: shoes,
-            pontos: pontos,
-            eventsCount: eventsCount,
-            status: status
-        }
-        this.users.push(user);
-        this._persist();
-    }
 
     updatePhoto(id, username, name, password, email, birth, nImage, admin, stride, distance, eventType, shirt, shorts, shoes, pontos, eventsCount, status) {
         this.users = this.users.filter(user => user.username != username)

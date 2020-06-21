@@ -91,53 +91,57 @@ export default class UserController {
     }
 
 
-    updateEmail(nEmail) {
-        if (!this.userModel.getAll().some(user => user.email === nEmail)) {
-            for (const user of this.userModel.getAll()) {
-                if (sessionStorage.getItem('loggedUser') !== null) {
-                    if (sessionStorage.getItem('loggedUser') === user.username) {
-                        this.userModel.updateEmail(user.id, user.username, user.fullname, user.password, nEmail, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status)
-                    }
-                } else if (sessionStorage.getItem('loggedAdmin') !== null) {
-                    if (sessionStorage.getItem('loggedUser') === user.username) {
-                        this.userModel.updateEmail(user.id, user.username, user.fullname, user.password, nEmail, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status)
-                    }
+
+    updateSettings(nPassword, nConfPassword, nEmail) {
+        this.samePasswordUpdate = false
+        this.passwordUpdate = false;
+        this.emailUpdate = false;
+        for (const user of this.getUsers()) {
+            if (user.username === this.LoginStatus()) {
+                if (nPassword === "" && nConfPassword === "") {
+                    this.samePasswordUpdate = true;
+                    //this.userModel.updatePassword(user.id, user.username, user.fullname, user.password, user.email, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status)
+                } else if (nPassword !== nConfPassword) {
+                    throw Error(`Password don't match!`);
+                } else if (nPassword === nConfPassword && nPassword === user.password) {
+                    throw Error(`Your new password can't be the same as the old!`)
+                } else if (nPassword === nConfPassword && nPassword !== user.password) {
+                    this.passwordUpdate = true;
+                    //this.userModel.updatePassword(user.id, user.username, user.fullname, nPassword, user.email, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status)
                 }
             }
+        }
+
+        if (nEmail === "") {
+            throw Error(`Please enter your email!`);
         } else {
-            throw Error(`Email : ${nEmail} already exists!`);
-        }
-
-    }
-
-    updatePassword(nPassword, nConfPassword) {
-        for (const user of this.userModel.getAll()) {
-            if (sessionStorage.getItem('loggedUser') !== null) {
-                if (sessionStorage.getItem('loggedUser') === user.username) {
-                    if (nPassword != user.password) {
-                        if (nPassword === nConfPassword) {
-                            this.userModel.updatePassword(user.id, user.username, user.fullname, nPassword, user.email, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status)
-                        } else {
-                            throw Error(`The passwords don't match!`)
-                        }
-                    } else {
-                        throw Error(`Your new password can't be the same as the old.`)
-                    }
-                }
-            } else if (sessionStorage.getItem('loggedAdmin') !== null) {
-                if (sessionStorage.getItem('loggedUser') === user.username) {
-                    if (nPassword != user.password) {
-                        if (nPassword === nConfPassword) {
-                            this.userModel.updatePassowrd(user.id, user.username, user.fullname, nPassword, user.email, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status)
-                        } else {
-                            throw Error(`The passwords don't match!`)
-                        }
-                    } else {
-                        throw Error(`Your new password can't be the same as the old.`)
-                    }
+            for (const user of this.getUsers()) {
+                if (user.email === nEmail && user.username != this.LoginStatus()) {
+                    throw Error(`Email : ${nEmail} already exists!`)
+                } else if (user.email === nEmail && user.username === this.LoginStatus()) {
+                    this.emailUpdate = true
+                        //this.userModel.updateEmail(user.id, user.username, user.fullname, user.password, nEmail, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status);
+                } else if (user.email !== nEmail && user.username === this.LoginStatus()) {
+                    this.emailUpdate = true
+                        //this.userModel.updateEmail(user.id, user.username, user.fullname, user.password, nEmail, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status);
                 }
             }
         }
+
+        for (const user of this.getUsers()) {
+            if (user.username === this.LoginStatus()) {
+                if (this.emailUpdate === true && this.passwordUpdate === true) {
+                    //this.userModel.updatePassword(user.id, user.username, user.fullname, nPassword, user.email, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status)
+                    this.userModel.updateSettings(user.id, user.username, user.fullname, nPassword, nEmail, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status)
+                        //this.userModel.updateEmail(user.id, user.username, user.fullname, user.password, nEmail, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status);
+                } else if (this.emailUpdate === true && this.samePasswordUpdate === true) {
+                    //this.userModel.updatePassword(user.id, user.username, user.fullname, user.password, user.email, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status)
+                    this.userModel.updateSettings(user.id, user.username, user.fullname, user.password, nEmail, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status)
+                        //this.userModel.updateEmail(user.id, user.username, user.fullname, user.password, nEmail, user.birth, user.image, user.admin, user.stride, user.distance, user.eventType, user.shirt, user.shorts, user.shoes, user.pontos, user.eventsCount, user.status);
+                }
+            }
+        }
+
     }
 
     uploadPhoto(nImage) {

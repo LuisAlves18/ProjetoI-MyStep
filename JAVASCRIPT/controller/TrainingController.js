@@ -8,4 +8,8 @@ export default class trainingController {
     addTraining(username, training) {
         this.trainingModel.create(username, training);
     }
+
+    getTrainings() {
+        return this.trainingModel.getAll();
+    }
 }

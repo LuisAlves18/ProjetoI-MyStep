@@ -19,13 +19,32 @@ export default class UserViewLogout {
         this.manageTeams = document.getElementById('manageTeams');
         this.myTeam = document.getElementById('myTeam');
         this.teamsPage = document.getElementById('teamsPage');
+        this.trainingPage = document.getElementById('trainingPage')
+        this.StatsPage = document.getElementById('StatsPage')
+        this.profilePicture = document.getElementById('profilePicture')
 
         //this.userController.personLogged();
         this.checkTeam(this.teamsController.getTeams())
+        this.getImage();
         this.bindAddLogoutEvent();
         this.displayAdmin();
 
 
+    }
+
+    getImage() {
+        this.users = this.userController.getUsers();
+        for (const user of this.users) {
+            if (user.username === this.userController.LoginStatus()) {
+                if (user.image === 'OUTROS/download.png') {
+                    this.profilePicture.src = user.image;
+                } else {
+                    var dataImage = user.image;
+                    this.profilePicture.src = "data:image/png;base64," + dataImage
+                }
+
+            }
+        }
     }
 
     bindAddLogoutEvent() {
@@ -40,6 +59,10 @@ export default class UserViewLogout {
         if (this.userController.CheckAdminLogin() == true) {
             this.runningDataDisplay.style.display = "none";
             this.equipmentDataDisplay.style.display = "none";
+            this.StatsPage.style.display = "none";
+            this.trainingPage.style.display = "none";
+            this.manageEvents.style.display = "none";
+            this.manageTeams.style.display = "none";
         } else {
             this.manageUsers.style.display = "none";
             this.manageEvents.style.display = "none";

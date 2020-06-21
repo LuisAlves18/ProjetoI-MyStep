@@ -13,6 +13,8 @@ import TeamsInfoView from './view/TeamsInfoView.js'
 import CreateTeamView from './view/CreateTeamView.js'
 import AdminView from './view/AdminView.js'
 import RankingView from './view/RankingView.js'
+import StatsView from './view/StatsView.js'
+import EditProfileView from './view/EditProfileView.js'
 
 
 
@@ -36,6 +38,7 @@ class App {
             ],
             'edit': [
                 UserInfoView,
+                //EditProfileView,
                 UserViewLogout
             ],
             'training': [
@@ -84,7 +87,16 @@ class App {
                 AdminView
             ],
             'achievements': [
+                UserViewLogout,
                 RankingView
+            ],
+            'statistics': [
+                UserViewLogout,
+                StatsView
+            ],
+            'edit-profile': [
+                EditProfileView,
+                UserViewLogout
             ]
 
 

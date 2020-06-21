@@ -33,7 +33,7 @@
 
 
                     <li class="nav-item ">
-                        <a class="nav-link" href="HTML/training.html">
+                        <a class="nav-link" href="HTML/training.html" id="trainingPage">
                             Training
                         </a>
                     </li>
@@ -55,13 +55,13 @@
                     </li>
                     <li class="nav-item dropdown " id="dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span id="name">username </span><img src="OUTROS/download.png" height="30px">
+                            <span id="name">username </span><img src="" height="30px" id="profilePicture">
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/HTML/achievements.html">Achievements</a>
-                            <a class="dropdown-item" href="/HTML/statistics.html">Statistics</a>
-                            <a class="dropdown-item" href="HTML/edit.html">Edit Profile</a>
+                            <a class="dropdown-item" href="/HTML/statistics.html" id="StatsPage">Statistics</a>
+                            <a class="dropdown-item" href="HTML/edit-profile.html">Edit Profile</a>
                             <a class="dropdown-item" href="HTML/running-data.html" id="runningData">Running Data</a>
                             <a class="dropdown-item" href="HTML/equipment-data.html" id="equipmentData">Equipment Data</a>
                             <a class="dropdown-item" href="HTML/manage-users.html" id="manageUsers">Manage Users</a>
@@ -123,6 +123,149 @@
         </div>
         <div id="catalog">
 
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="addEventModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Event</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="AddBox" class="col-12">
+
+                            <form id="frmAddNewEvent">
+
+                                <div>
+                                    <div class="col-6">
+                                        Edition: <span id="txtEdition">1</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-row  justify-content-center">
+                                    <label for="txtEventNameValue">Event Name</label>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control form-control" id="txtEventNameValue" placeholder="Event Name" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row justify-content-center">
+                                    <label for="txtLocalidade">Event Place</label>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control form-control" id="txtLocalidade" placeholder="Event Place" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row justify-content-center">
+                                    <label for="txtDescricao">Description</label>
+                                    <div class="col-12">
+
+                                        <textarea id="txtDescricao" cols="55" rows="2" placeholder="Type the description..."></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-row justify-content-center">
+                                    <label for="">Date & Time</label>
+                                    <div class="col-12 row">
+
+                                        <div class="col-9">
+
+                                            <input type="date" class="form-control form-control" id="txtDate" placeholder="Date" required>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="number" class="form-control form-control" id="txtTime" placeholder="Time" min="0" max="23" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row justify-content-center">
+                                    <label for="">Maximum Capacity & Price</label>
+                                    <div class="col-12 row">
+                                        <div class="col-6">
+
+                                            <input type="number" class="form-control form-control" id="txtCapacity" placeholder="Maximum Capacity" required min="10">
+                                        </div>
+
+                                        <div class="col-6">
+
+                                            <input type="number" class="form-control form-control" id="txtPrice" placeholder="Price" required min="1">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row justify-content-center">
+                                    <label for="">Poster</label>
+
+                                    <div class="col-6">
+
+                                        <input type="file" class="form-control form-control" id="txtPoster" placeholder="Poster" required>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <img src="" alt="Foto do poster" id="imgPoster">
+                                    </div>
+                                </div>
+
+                                <div class="form-row justify-content-center">
+                                    <label for="">T-shirt gifted</label>
+
+                                    <div class="col-6">
+
+                                        <input type="file" class="form-control form-control" id="txtTshirt" placeholder="T-Shirt" required>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <img src="" alt="Foto da t-shirt" id="imgTshirt">
+                                    </div>
+                                </div>
+
+                                <div class="form-row  justify-content-center">
+                                    <div class="col-sm-12 col-lg-3">
+                                        <span>5km</span><input type="checkbox" name="fivekm" id="fivekmCheckBox">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-3">
+                                        <span>10km</span><input type="checkbox" name="tenkm" id="tenkmCheckBox">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-3">
+                                        <span>21km</span><input type="checkbox" name="twentyOnekm" id="twentyOnekmCheckBox">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-3">
+                                        <span>42km</span><input type="checkbox" name="fourtyTwokm" id="fourtyTwokmCheckBox">
+                                    </div>
+                                </div>
+
+                                <div class="form-row  justify-content-center">
+                                    <div class="col-sm-12 col-lg-6">
+                                        <span>Run</span><input type="checkbox" name="run" id="runCheckBox">
+                                    </div>
+                                    <div class="col-6">
+                                        <span>Walk</span><input type="checkbox" name="walk" id="walkCheckBox">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-row justify-content-center">
+                                    <div class="col-6">
+                                        <p id="errorMessageEvent"></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-secondary" id="btnCreateEvent" type="submit">
+                                                    Event
+                                                </button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

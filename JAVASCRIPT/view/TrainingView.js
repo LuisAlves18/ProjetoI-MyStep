@@ -53,6 +53,13 @@ export default class TrainingView {
             this.time = document.getElementById("timer").innerText;
             this.result = new Date(this.time * 1000).toISOString().substr(11, 8)
             this.username = username
+            this.TempoHoras = this.time / 3600;
+            console.log("vel media", this.TempoHoras);
+
+            //alterar o this.runDistance.value - > 5,5 Km para 5.5
+            this.velocidadeMedia = this.runDistance.value / this.TempoHoras;
+
+
 
             //duas variaveis que guardam o tempo e a distancia corrida
             console.log("time in timer: ", this.result);

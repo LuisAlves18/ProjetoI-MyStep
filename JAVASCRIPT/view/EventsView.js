@@ -52,6 +52,7 @@ export default class EventsView {
         this.errorMessageEvent = document.getElementById('errorMessageEvent')
 
         this.renderCatalog(this.eventsController.getEvents())
+        this.bindAddFilterEvent();
         this.btnAddEventDisplay();
         //this.searchEventName();
         this.bindAddEvent();
@@ -59,9 +60,11 @@ export default class EventsView {
         this.showTshirt();
 
 
+
     }
+
     bindAddFilterEvent() {
-        this.Myform.addEventListener('submit', event => {
+        this.btn_filter.addEventListener('click', event => {
             event.preventDefault();
             this.renderCatalog(this.eventsController.getEvents(this.filterName.value, this.chkRun.checked, this.chkWalk.checked, this.chk5k.checked, this.chk10k.checked, this.chk21k.checked, this.chk42k.checked))
         })
@@ -268,8 +271,13 @@ export default class EventsView {
         let html = `
         <div class="col-sm-12 col-md-6 col-lg-3">
             <div class="card">
-                <div class="card-body">
-                <img class="card-img-top" src="${this.image}" alt="">
+                <div class="card-body">`
+        if (prova.poster === 'OUTROS/download.png') {
+            html += `<img class="card-img-top" src="${prova.poster}" alt="">`
+        } else {
+            html += `<img class="card-img-top" src="${this.image}" alt="">`
+        }
+        html += `
                     <h4 class="card-title">${prova.name}</h4>
                     <button id="${prova.id}" class="btn btn-primary see">See more</button>
             `

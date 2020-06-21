@@ -1,16 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Menu</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/CSS/styles.css">
-    <link rel="stylesheet" href="/CSS/training.css">
+    <link rel="stylesheet" href="/CSS/edit.css">
+    <title>Personal Area</title>
 </head>
 
 <body>
@@ -75,95 +74,97 @@
             </div>
         </nav>
 
+
         <div class="row justify-content-center">
+            <div id="RegBox" class="col-sm-8 col-lg-10 justify-content-center">
+                <div class="row justify-content-center" id="HeadReg">
+                    <h2>Personal Area</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-7">
+                        <div id="container-photo">
+                            <form id="frmUpdatePhoto">
+                                <p>Edit your photo:</p>
 
-            <div class="form-row  justify-content-center">
-                <form class="form-inline">
-                    <div class="form-group">
-                        <div class="col-3">
-                            <input type="text" class="form-control form-control" id="startPoint" placeholder="" value="START" readonly>
+                                <div class="row justify-content-center photo">
+                                    <img src="" id="picture" alt="Foto de Perfil">
+                                </div>
 
+                                <input type="file" id="btnOpenFile" class="btn btn-outline-light btnChanges" required><br>
+                                <button class="btn btn-outline-light btnChanges" id="btnChangePhoto" type="submit">
+                                Edit Photo
+                            </button>
+                            </form>
                         </div>
 
-                        <div class="col-3">
-                            <input type="text" class="form-control form-control" id="startLocation" placeholder="My Location">
-                        </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-3">
-                            <input type="text" class="form-control form-control" id="endPoint" placeholder="" value="END" readonly>
+
+                    <div class="col-5">
+                        <div id="container-form">
+                            <form id="frmUpdateEmail">
+
+
+
+
+                            </form>
+                            <form id="frmUpdatePassword">
+
+                                <div id="container-password">
+
+                                    <label for="txtEmail">Email: </label>
+                                    <div class="form-row justify-content-center">
+                                        <div class="col-12">
+                                            <input type="email" class="form-control form-control" id="txtEmail" value="email do user" readonly="true" required>
+                                        </div>
+
+                                    </div>
+
+
+                                    <label for="txtPassword">Password: </label>
+                                    <div class="form-row justify-content-center">
+                                        <div class="col-12">
+                                            <input type="password" class="form-control form-control" id="txtPassword" placeholder="Change your Password" readonly="true">
+                                        </div>
+
+                                    </div>
+
+                                    <label for="txtConfPassword">Confirm Password: </label>
+                                    <div class="form-row justify-content-center">
+                                        <div class="col-12">
+                                            <input type="password" class="form-control form-control" id="txtConfPassword" placeholder="Confirm your new Password" readonly="true">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row justify-content-center">
+                                        <div class="col-4">
+                                            <button class="btn btn-outline-light btnChanges" id="btnChangePassowrd" type="submit">
+                                            Make Changes
+                                        </button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-outline-light btnChanges" id="btnUpdatePassowrd" type="submit">
+                                            Update Password
+                                        </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row justify-content-left">
+                                        <p id="passwordErrorMessage" style="color: yellow;"></p>
+                                    </div>
+                                </div>
+
+
+                            </form>
                         </div>
-                        <div class="col-3">
-                            <input type="text" class="form-control form-control" id="endLocation" placeholder="My Location">
-                        </div>
+
                     </div>
-                </form>
-            </div>
-
-
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-">
-                <button class="btn btn-outline-light" type="button" id="btnGetRoutes">Get Distance</button>
-            </div>
-
-        </div>
-
-        <div class="row justify-content-center">
-            <div>
-                <p id="distanceMessage"></p>
-
+                </div>
             </div>
         </div>
-
-        <div class="row justify-content-center">
-
-            <div id="mapDiv">
-
-            </div>
-
-
-        </div>
-
-        <div class="row justify-content-center">
-
-            <div>
-                <p id="timer">00:00:00</p>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="">
-                <button class="btn btn-outline-light" type="button" id="btnStart">Begin</button>
-            </div>
-            <div class="">
-                <button class="btn btn-outline-light" type="button" id="btnStop">Stop</button>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <button class="btn btn-outline-light" type="button" id="btnSave">Save</button>
-        </div>
-
-        <div class="row justify-content-center">
-            <p id="messageError"></p>
-        </div>
-
-        <div class="row justify-content-center">
-            <input type="text" id="hiddenInput">
-        </div>
-
-
-
-
     </div>
 
-    <!-- Optional JavaScript -->
-    <script src="/JAVASCRIPT/otherFunction.js"></script>
     <script src="/JAVASCRIPT/app.js" type="module"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByn_TnGnn1ki87CKaKsI03FBmvq1rhpxY&callback=initMap"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
