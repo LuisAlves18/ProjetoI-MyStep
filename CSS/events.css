@@ -47,11 +47,51 @@
 .edit {
     border-radius: 28px;
     color: black;
-    background-color: white;
+    background-color: #00cc99;
+    display: none;
 }
 
 .edit:hover {
     border-radius: 28px;
-    background-color: #00cc99;
+    background-color: white;
     color: black;
+}
+
+#btnAddEvent {
+    border-radius: 28px;
+    background-color: #00cc99;
+    color: white;
+}
+
+.modal-body {
+    background-color: #484848;
+    color: white;
+}
+
+#txtEventNameValue,
+#txtEdition,
+#txtLocalidade,
+#txtDescricao,
+#txtDate,
+#txtTime,
+#txtCapacity,
+#txtPrice,
+#txtTshirt,
+#imgTshirt {
+    margin: 2vh;
+    border-radius: 28px;
+}
+
+#btnCreateEvent {
+    border-radius: 28px;
+    background-color: #00cc99;
+}
+
+#close {
+    border-radius: 28px;
+    background-color: #00cc99;
+}
+
+.modal-footer {
+    background-color: #dadada;
 }

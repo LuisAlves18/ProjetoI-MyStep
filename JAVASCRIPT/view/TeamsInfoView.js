@@ -17,22 +17,40 @@ export default class TeamsInfoView {
         this.generateMembers();
         this.fillTeamData();
         this.bindJoinTeam();
+        this.bindLeaveTeam();
 
     }
 
     buttonJoinDisplay() {
-        const currentTeam = this.teamsController.getCurrentTeam()
-        this.currentUser = this.userController.LoginStatus();
-        let members = currentTeam.membros;
-        for (let i = 0; i < members.length; i++) {
-            if (members[i] === this.currentUser) {
-                //console.log("entrou no if")
-                this.btnJoin.style.display = "none";
-                return true
-            }
 
+        if (this.teamsController.getUserTeam() !== null) {
+            const currentTeam = this.teamsController.getUserTeam()
+            this.currentUser = this.userController.LoginStatus();
+            let members = currentTeam.membros;
+            for (let i = 0; i < members.length; i++) {
+                if (members[i] === this.currentUser) {
+                    //console.log("entrou no if")
+                    this.btnJoin.style.display = "none";
+                    return true
+                }
+
+            }
+            this.btnLeaveTeam.style.display = "none";
+        } else {
+            const currentTeam = this.teamsController.getCurrentTeam()
+            this.currentUser = this.userController.LoginStatus();
+            let members = currentTeam.membros;
+            for (let i = 0; i < members.length; i++) {
+                if (members[i] === this.currentUser) {
+                    //console.log("entrou no if")
+                    this.btnJoin.style.display = "none";
+                    return true
+                }
+
+            }
+            this.btnLeaveTeam.style.display = "none";
         }
-        this.btnLeaveTeam.style.display = "none";
+
     }
 
     bindJoinTeam() {
@@ -45,21 +63,44 @@ export default class TeamsInfoView {
             Ntotal_atletas = Nmembros.length;
             console.log(Nmembros);
             this.teamsController.updateMembersTotal(currentTeam.id, currentTeam.name, currentTeam.localidade, currentTeam.camisola, Ntotal_atletas, Nmembros, currentTeam.logo, currentTeam.owner);
+            // Wait 1 second before sending to catalog, so the user can see the login success message
+            setTimeout(() => {
+                    location.href = "../index.html";
+                },
+                1000);
         })
 
     }
 
     bindLeaveTeam() {
-        const currentTeam = this.teamsController.getUserTeam()
+        this.btnLeaveTeam.addEventListener('click', event => {
+            event.preventDefault();
+            const currentTeam = this.teamsController.getUserTeam()
 
-        this
+            this.membros = currentTeam.membros;
+            this.nMembers = []
+            for (let i = 0; i < this.membros.length; i++) {
+                if (this.membros[i] !== this.userController.LoginStatus()) {
+                    this.nMembers.push(this.membros[i]);
+                }
+            }
+
+            this.teamsController.leaveTeam(this.nMembers, currentTeam.name);
+            location.href = '../index.html'
+
+        })
+
+
+
+
     }
 
     generateMembers() {
-        const currentTeam = this.teamsController.getCurrentTeam()
-        const membros = currentTeam.membros
+        if (this.teamsController.getUserTeam() === null) {
+            const currentTeam = this.teamsController.getCurrentTeam()
+            const membros = currentTeam.membros
 
-        let html = `<table class="table table-dark">
+            let html = `<table class="table table-dark">
         <thead>
             <tr>
                 <th scope="col"></th>
@@ -68,15 +109,39 @@ export default class TeamsInfoView {
         </thead>
         <tbody>`
 
-        for (let i = 0; i < membros.length; i++) {
-            html += `<tr>
+            for (let i = 0; i < membros.length; i++) {
+                html += `<tr>
             <th scope="row">${i+1}</th>
             <td>${membros[i]}</td>
         </tr>`
-        }
-        html += ` </tbody>
+            }
+            html += ` </tbody>
         </table> `
-        return html;
+            return html;
+        } else {
+            const currentTeam = this.teamsController.getUserTeam()
+            const membros = currentTeam.membros
+
+            let html = `<table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>`
+
+            for (let i = 0; i < membros.length; i++) {
+                html += `<tr>
+            <th scope="row">${i+1}</th>
+            <td>${membros[i]}</td>
+        </tr>`
+            }
+            html += ` </tbody>
+        </table> `
+            return html;
+        }
+
     }
 
     fillTeamData() {

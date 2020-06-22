@@ -75,7 +75,11 @@ export default class TrainingView {
                 this.trainingController.addTraining(this.username, this.distanceTime);
                 this.displayMessageError("Training added with success!");
                 this.clearInputs();
-                location.reload();
+                // Wait 1 second before sending to catalog, so the user can see the login success message
+                setTimeout(() => {
+                        location.reload();
+                    },
+                    1000);
             } catch (error) {
                 this.displayMessageError(error)
             }

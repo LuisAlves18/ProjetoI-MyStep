@@ -30,6 +30,15 @@ export default class TeamsController {
         this.teamsModel.remove(name)
     }
 
+    leaveTeam(membros, teamName) {
+        const teams = this.getTeams();
+        for (const team of teams) {
+            if (team.name === teamName) {
+                this.teamsModel.leaveTeam(team.id, team.name, team.localidade, team.camisola, team.total_atletas, membros, team.logo, team.owner);
+            }
+        }
+    }
+
     updatePointsEvents(id, username, name, nPassword, email, birth, image, admin, stride, distance, eventType, shirt, shorts, shoes, pontos, eventsCount, status) {
 
     }

@@ -40,6 +40,24 @@ export default class teamsModel {
         this.teams = this.teams.filter(team => team.name != name)
         this._persist()
     }
+
+    leaveTeam(id, name, localidade, camisola, total_atletas, nMembros, logo, owner) {
+        this.teams = this.teams.filter(team => team.name != name);
+        this._persist();
+        const team = {
+            id: id,
+            name: name,
+            localidade: localidade,
+            camisola: camisola,
+            total_atletas: total_atletas,
+            membros: nMembros,
+            logo: logo,
+            owner: owner
+
+        }
+        this.teams.push(team);
+        this._persist();
+    }
     setCurrentTeam(id) {
         localStorage.setItem("current_team", id);
     }

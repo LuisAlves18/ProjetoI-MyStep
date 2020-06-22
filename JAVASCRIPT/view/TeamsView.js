@@ -60,7 +60,7 @@ export default class TeamsView {
         var dataImage = this.teamsController.getPhoto(team.name);
         this.image = "data:image/png;base64," + dataImage;
         let html = `
-        <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="col-sm-12 col-md-6 col-lg-3">
             <div class="card">
                 <div class="card-body">
                 <img class="card-img-top img" src="${this.image}" alt="">

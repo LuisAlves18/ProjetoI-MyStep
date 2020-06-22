@@ -75,6 +75,8 @@
             </div>
         </nav>
         <div class="row justify-content-center">
+            <button id="btnAddEvent" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addEventModal">Add Event</button>
+
             <div class="dropdown ">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="btnFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Filter
@@ -118,7 +120,6 @@
             </div>
             <div>
                 <!-- Button trigger modal -->
-                <button id="btnAddEvent" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addEventModal">Add Event</button>
             </div>
         </div>
         <div id="catalog">
@@ -262,7 +263,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" id="close" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>

@@ -98,7 +98,12 @@ export default class EquipmentDataView {
             this.userController.updateEquipmentData(this.checkedShirt, this.checkedShorts, this.checkedShoes);
             this.errorMessageRegister.innerHTML = "Equipment Data updated with success!";
             this.turnCheckBoxDisabled();
-            location.reload();
+            // Wait 1 second before sending to catalog, so the user can see the login success message
+            setTimeout(() => {
+                    location.reload();
+                },
+                1000);
+
         })
     }
 

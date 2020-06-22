@@ -184,7 +184,11 @@ export default class RunningDataView {
             this.userController.updateRunData(this.checkedStride, this.checkedDistance, this.checkedEvent);
             this.errorMessageRegister.innerHTML = "Run Data updated with success!";
             this.turnCheckBoxDisabled();
-            location.reload();
+            // Wait 1 second before sending to catalog, so the user can see the login success message
+            setTimeout(() => {
+                    location.reload();
+                },
+                1000);
         })
     }
 

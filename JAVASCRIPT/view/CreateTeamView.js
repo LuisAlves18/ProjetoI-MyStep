@@ -36,6 +36,11 @@ export default class CreateTeamView {
             this.imgDataLogo = this.getBase64Image(this.logoImage)
                 //this.userController.uploadPhoto(this.imgData);
             this.teamsController.createTeam(this.teamName.value, this.teamPlace.value, this.imgDataShirt, this.total_atletas, this.membros, this.imgDataLogo, this.owner)
+                // Wait 1 second before sending to catalog, so the user can see the login success message
+            setTimeout(() => {
+                    location.href = "../index.html";
+                },
+                1000);
         })
     }
 

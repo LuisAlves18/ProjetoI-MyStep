@@ -1,8 +1,10 @@
 import UserController from '../controller/UserController.js'
+import TeamsController from '../controller/TeamsController.js'
 
 export default class AdminView {
     constructor() {
         this.userController = new UserController();
+        this.teamsController = new TeamsController();
 
         this.userController.LoginStatus();
         this.userController.CheckAdminLogin();
@@ -64,6 +66,16 @@ export default class AdminView {
     AddBindRemoveUser() {
         for (const btnRemove of document.getElementsByClassName("remove")) {
             btnRemove.addEventListener('click', event => {
+                event.preventDefault();
+                this.teams = this.teamsController.getTeams();
+                for (const team of this.teams) {
+                    if (team.owner === event.target.id) {
+                        console.log("entrou no if");
+
+                        this.teamsController.removeTeam(team.name);
+                    }
+                }
+
                 this.userController.removeUser(event.target.id)
                 this.RenderUsersTable(this.userController.getUsers(), this.userController.LoginStatus())
             })

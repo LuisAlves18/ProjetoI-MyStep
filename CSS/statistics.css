@@ -8,3 +8,20 @@ th {
 #statsTable {
     margin-top: 50px;
 }
+
+#rankingTable {
+    margin-top: 5vh;
+}
+
+#info {
+    margin-top: 5vh;
+    border-radius: 28px;
+    background-color: #707070;
+    color: white
+}
+
+#HeadReg {
+    background-color: #484848;
+    border-radius: 28px;
+    color: #00cc99;
+}

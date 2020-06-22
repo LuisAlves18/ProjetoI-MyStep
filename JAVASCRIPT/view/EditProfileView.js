@@ -40,7 +40,7 @@ export default class EditProfileView {
         this.getImage();
         this.updateButtonsPassword();
         this.updatePassword();
-        this.updateEmail();
+
         this.showImage();
 
         this.setImage();
@@ -77,7 +77,9 @@ export default class EditProfileView {
                     this.image.src = "data:image/png;base64," + dataImage
                 }
 
+
             }
+
         }
     }
 
@@ -89,12 +91,7 @@ export default class EditProfileView {
         var ctx = canvas.getContext("2d");
 
 
-        /* var image = new Image();
-        image.src = img.src;
-        console.log('img.src ->',img);
-        image.onload = function() {
-            ctx.drawImage(image, 0, 0);
-        } */
+
         ctx.drawImage(img, 0, 0);
 
         var image = canvas.toDataURL("image/png");
@@ -137,7 +134,11 @@ export default class EditProfileView {
 
                 this.userController.updateSettings(this.txtPassword.value, this.txtConfPassword.value, this.txtEmail.value)
                 this.displayErrorMessage("Settings changed with success!")
-                location.reload();
+                    // Wait 1 second before sending to catalog, so the user can see the login success message
+                setTimeout(() => {
+                        location.reload();
+                    },
+                    1000);
             } catch (error) {
                 this.displayErrorMessage(error, 'danger');
             }
@@ -146,20 +147,7 @@ export default class EditProfileView {
     }
 
 
-    updateEmail() {
-        this.frmUpdateEmail.addEventListener('submit', event => {
-            event.preventDefault();
-            try {
-                this.userController.updateEmail(this.txtEmail.value);
-                this.displayErrorMessage("Email updated with success!")
-                location.reload();
-            } catch (error) {
-                this.displayErrorMessage(error, 'danger');
-            }
 
-
-        })
-    }
 
     showSettings() {
         if (sessionStorage.getItem('loggedUser') !== null) {
