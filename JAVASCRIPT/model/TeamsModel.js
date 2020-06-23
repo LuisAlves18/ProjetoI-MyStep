@@ -41,6 +41,12 @@ export default class teamsModel {
         this._persist()
     }
 
+    removeUserTeam() {
+        if (localStorage.getItem('user_team') !== null) {
+            localStorage.removeItem('user_team');
+        }
+    }
+
     leaveTeam(id, name, localidade, camisola, total_atletas, nMembros, logo, owner) {
         this.teams = this.teams.filter(team => team.name != name);
         this._persist();
@@ -69,7 +75,11 @@ export default class teamsModel {
         return this.teams.find(team => team.id === +localStorage.current_team)
     }
     getUserTeam() {
-        return this.teams.find(team => team.id === +localStorage.user_team)
+        if (localStorage.getItem('user_team') === null) {
+            return localStorage.getItem('user_team');
+        } else {
+            return this.teams.find(team => team.id === +localStorage.user_team)
+        }
     }
     _persist() {
         localStorage.setItem('teams', JSON.stringify(this.teams));

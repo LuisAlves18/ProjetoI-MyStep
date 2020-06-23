@@ -24,7 +24,6 @@ body {
 }
 
 #logo {
-    
     margin-left: 6vh;
 }
 
@@ -52,8 +51,7 @@ body {
     background-color: #00cc99;
 }
 
-
-#errorMessage {
+#errorMessageRegister {
     color: yellow;
 }
 
@@ -62,23 +60,18 @@ body {
 }
 
 .icon {
-    padding: 20px; 
-    color: #00cc99; 
-    min-width: 50px; 
+    padding: 20px;
+    color: #00cc99;
+    min-width: 50px;
     text-align: center;
     margin-left: 170px;
-    
-  }
+}
 
-  .input-icons i { 
-    position: absolute; 
-} 
+.input-icons i {
+    position: absolute;
+}
 
-.input-icons { 
-    width: 100%; 
-    margin-bottom: 5px; 
-} 
-
-
-
-
+.input-icons {
+    width: 100%;
+    margin-bottom: 5px;
+}

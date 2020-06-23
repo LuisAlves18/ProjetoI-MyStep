@@ -23,8 +23,8 @@ export default class TeamsView {
     }
     bindAddSeeMoreTeam() {
         for (const btnSee of document.querySelectorAll(".see")) {
-            btnSee.addEventListener('click', team => {
-                this.teamsController.setCurrentTeam(team.target.id)
+            btnSee.addEventListener('click', event => {
+                this.teamsController.setCurrentTeam(event.target.id)
                 location.href = 'HTML/teams-info.html';
             })
         }

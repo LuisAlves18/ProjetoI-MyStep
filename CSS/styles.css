@@ -27,7 +27,7 @@ body {
     height: 45px;
 }
 
-#current {
+.current {
     color: white;
 }
 

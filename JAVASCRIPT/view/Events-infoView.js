@@ -19,6 +19,8 @@ export default class EventsInfoView {
         this.eventType_dist = document.querySelector("#type_dist")
         this.btnjoin = document.querySelector("#join")
         this.joinedMessage = document.getElementById('JoinedMessage');
+        this.localidade = document.getElementById('localidade')
+        this.price = document.getElementById('price')
 
         this.buttonJoinDisplay();
         this.generateType_dist();
@@ -114,11 +116,13 @@ export default class EventsInfoView {
     fillEventData() {
         const currentEvent = this.eventsController.getCurrentEvent()
         this.eventName.innerHTML = currentEvent.name
-        this.eventEdicao.innerHTML = 'Edição: ' + currentEvent.edicao
-        this.eventSlogan.innerHTML = currentEvent.descricao
+        this.eventEdicao.innerHTML = 'Edition: ' + currentEvent.edicao
+        this.eventSlogan.innerHTML =  currentEvent.descricao
         this.eventPhoto.src = currentEvent.poster;
         this.eventData.innerHTML = currentEvent.data_hora;
         this.eventCap.innerHTML = 'Capacity: ' + currentEvent.ocupacao + '/' + currentEvent.capacidade;
+        this.localidade.innerHTML = 'Local: ' + currentEvent.localidade;
+        this.price.innerHTML = 'Price: ' + currentEvent.preco;
         this.eventType_dist.innerHTML = this.generateType_dist();
     }
 

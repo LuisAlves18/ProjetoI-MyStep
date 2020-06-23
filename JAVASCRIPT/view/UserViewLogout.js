@@ -50,7 +50,7 @@ export default class UserViewLogout {
     bindAddLogoutEvent() {
         this.logoutButton.addEventListener('click', event => {
             this.userController.logoutUser();
-
+            this.teamsController.removeUserTeam();
             location.href = '../HTML/login.html';
         });
     }

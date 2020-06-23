@@ -30,6 +30,10 @@ export default class TeamsController {
         this.teamsModel.remove(name)
     }
 
+    removeUserTeam() {
+        this.teamsModel.removeUserTeam();
+    }
+
     leaveTeam(membros, teamName) {
         const teams = this.getTeams();
         for (const team of teams) {

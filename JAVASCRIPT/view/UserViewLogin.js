@@ -1,8 +1,10 @@
 import UserController from '../controller/UserController.js'
+import TeamsController from '../controller/TeamsController.js'
 
 export default class UserView {
     constructor() {
         this.userController = new UserController();
+        this.teamsController = new TeamsController();
 
         //login DOM
         this.loginForm = document.getElementById('frmLogin');
@@ -22,6 +24,18 @@ export default class UserView {
 
             try {
                 this.userController.loginUser(this.loginUsername.value, this.loginPassword.value);
+                const teams = this.teamsController.getTeams();
+                for (const team of teams) {
+                    const membros = team.membros;
+                    if (team.owner === this.loginUsername.value) {
+                        this.teamsController.setUserTeam(team.id)
+                    }
+                    for (let i = 0; i < membros.length; i++) {
+                        if (membros[i] === this.loginUsername.value) {
+                            this.teamsController.setUserTeam(team.id)
+                        }
+                  }
+                }
                 this.displayLoginMessage('User logged with success!','success');
                 location.href = '../index.html';
             } catch(e) {

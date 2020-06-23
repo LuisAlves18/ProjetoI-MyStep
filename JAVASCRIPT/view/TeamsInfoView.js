@@ -22,6 +22,8 @@ export default class TeamsInfoView {
     }
 
     buttonJoinDisplay() {
+        
+
 
         if (this.teamsController.getUserTeam() !== null) {
             const currentTeam = this.teamsController.getUserTeam()

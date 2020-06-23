@@ -10,7 +10,8 @@
 
 #data,
 #nome,
-#edicao {
+#edicao,
+#localidade {
     color: #00cc99;
 }
 
@@ -24,7 +25,8 @@
 
 #td,
 #slogan,
-#cap {
+#cap,
+#price {
     color: white
 }
 
